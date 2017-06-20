@@ -1,0 +1,618 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="revealjs/css/reveal.css">
+        <link rel="stylesheet" href="revealjs/css/theme/white.css">
+
+        <link rel="stylesheet" href="highlight/styles/default.css">
+				<meta charset="utf8"/>
+
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+								<section>
+                    <h1><em>#</em><strong>DevFest</strong><small>2016</small></h1>
+                </section>
+                <section>
+                    <img class="avatar" src="images/obito.jpg" />
+                    <p><small>Modeste ASSIONGBON</small></p>
+                    <p>JavaScript FullStack developer</p>
+                    <p><small>@rblmdst</small></p>
+                </section>
+              <section>
+                <h1>The future of web apps<br/><small>(Progressive Web Apps)</small></h1>
+              </section>
+
+              <section>
+                <ul>
+                    <li><strong>App.</strong> = Application</li>
+                    <li><strong>PWA</strong> = Progressive Web Apps</li>
+                    <li><strong>SW</strong> = Service Worker</li>
+                </ul>
+              </section>
+
+              <section>
+                <section>
+                    <h2>Les types d'applications</h2>
+                </section>
+                <section>
+                    <h3> Application Web :</h3>
+                    <ul>
+                        <li>Accessible via une URL en utilisant un navigateur.</li>
+                        <li>Pas besoin de l'installer pour l'utiliser.</li>
+                    </ul>
+                    <p>
+                        <strong>Application web mobile</strong> =>  en utilisant un navigateur mobile.
+                    </p>
+                </section>
+                <section>
+                    <h3> Application Native :</h3>
+                    <ul>
+                        <li>Developpée pour une plateforme (os) ou un périphérique particulier.</li>
+                        <li>Installée sur le périphérique à l'achat ou téléchargeable depuis un "store" et installable sur le périphérique.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3> Application Hybride :</h3>
+                    <ul>
+                        <li>Intermédiaire entre application Web et Native.</li>
+                        <li>Developpée en utilisant des technologies web et destinée à être utilisé sur une plateforme  ou un périphérique particulier.</li>
+                    </ul>
+                    <p>=> Application Hybride = <strong>"Pseudo App. Native"</strong></p>
+                </section>
+
+                <section>
+                    <h4 >Comparaison</h4>
+                    <style>
+                        img.avatar{
+                            width: 15%;
+                            border-radius: 50%;
+                        }
+                        #comparaison:after{
+                            content: "";
+                            display: block;
+                            width: 0;
+                            clear: both;
+                        }
+                        .reveal section img{
+                            border: 0px;
+                            box-shadow: 0 0 0 transparent;
+                            background-color: transparent;
+                        }
+                        .text-center{
+                            text-align: center;
+                        }
+                        .reveal ul.text-medium{
+                            font-size: 0.8em
+                        }
+                        .reveal ul.text-small{
+                            font-size: 0.5em
+                        }
+                        .reveal pre{
+                            font-size: 0.40em;
+                        }
+                        .reveal b, .reveal strong{
+                            color: #f44b43;
+                        }
+                        .reveal h1,.reveal h2,.reveal h3,.reveal h4,.reveal h5,.reveal h6 {
+                            color: #5d5a5a;
+                        }
+
+                        .reveal small{
+                            vertical-align: baseline;
+                        }
+                        .reveal .file-title, .reveal .text-left{
+                            text-align: left;
+                        }
+                    </style>
+                    <div id="comparaison">
+                        <ul style="display: inline-block; width: 40%; float: left;  font-size: 0.6em">
+                            <h4 >App. Web</h4>
+                            <li>Recherchable à partir d'un moteur de recherche (searchable)</li>
+                            <li>Accessible via un lien (linkable)</li>
+                            <li>S'adapte à plusieurs tailles d'écran (progressive)</li>
+                        </ul>
+                        <ul style="display: inline-block; width: 40%; float:right; font-size: 0.6em">
+                            <h4>App. Native</h4>
+                            <li>Fonctionne même sans connexion (offline)</li>
+                            <li>Installable</li>
+                            <li>Système de notification</li>
+                            <li>Synchronisation des données</li>
+                            <li>contrôle du matériel (bluetooth, NFC, etc.)</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <div>
+                        Les app. Web <strong>manquent des fonctionnalités</strong> qu'offrent les app. Natives.
+                    </div>
+                </section>
+              </section>
+
+              <section>
+                  <h1>??</h1>
+                  <div class="text-center">
+                    <img class="no-sytle" src="images/confused.jpg">
+                  </div>
+                  Avoir une <strong>app. web</strong> dotée des mêmes <strong>fonctionnalités q'une App. Native</strong>
+              </section>
+
+              <section>
+                <section>
+                    <h2>Progressive Web Apps</h2>
+                </section>
+
+                <section>
+                    <h3>Qu'est-ce qu'elles sont ?</h3>
+                    <ul>
+                        <li>Application Web</li>
+                        <li>Association de technologies Web pour offrir les mêmes fonctionnalités qu'une app. Native</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Leur Caractéristique ?</h3>
+                    <ul class="text-medium">
+                        <li>Sécurisée (<strong>HTTPS only</strong>)</li>
+                        <li>Fonctionne aussi bien avec les connexions lentes qu'en mode hors-ligne (<strong>offline-first</strong>)</li>
+                        <li>Réception de <strong>push message</strong></li>
+                        <li>Affichage des <strong>notifications</strong></li>
+                        <li><strong>Synchronisation</strong> des données en arrière plan</li>
+                        <li>Ajout à l'écran d’accueil (<strong>installable</strong>)</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Qu'est ce qui fait leur socle ?</h3>
+                    <h4>Service Worker</h4>
+                    <ul class="text-medium">
+                        <li>Un script JavaScript</li>
+                        <li>S'installe dans le navigateur la première fois que l'utilisateur accède au site</li>
+                        <li>Tourne en arrière-plan indépendant des onglets ouverts</li>
+                        <li>Exécute des actions en réponse à certains événements (fetch, push, sync, notificationclick, etc.)</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Les Auxiliaires des SW</h3>
+                    <ul class="text-medium">
+                        <li><strong>Cache</strong> (stockage de réponses de requêtes HTTP pour des utilisations ultérieures) => mode offline</li>
+                        <li><strong>Fetch</strong> (faire des requêtes HTTP asynchrones)</li>
+                        <li><strong>Push</strong> (réception de message push d'un serveur de push)</li>
+                        <li><strong>Notification</strong> (informer l'utilisateur par exemple en réponse à un message de push)</li>
+                    </ul>
+                </section>
+              </section>
+
+              <section>
+                <section>
+                    <h2>Fonctionnement des PWA</h2>
+                    <p>(résumé)</p>
+                </section>
+
+                <section>
+                    <p>Premier accès à l'application web :</p>
+                    <p><strong>le SW est enregistré puis installer.</strong></p>
+                </section>
+
+                <section>
+                    <p>Lors de son installation ou en fonction de certaines actions de l'utilisateur :</p>
+                    <p><strong>le SW met en cache certaines ressources</strong> (pages, images, etc.) pour une utilisation ultérieure</p>
+                </section>
+
+                <section>
+                    <p>Après son activation le SW :</p>
+                    <ul class="text-medium">
+                        <li>Intercepte les requêtes vers le serveur et contrôle les réponses retournées</li>
+                        <li>Traite les messages PUSH et affiche des notifications à l'utilisateur</li>
+                        <li>Met dans une file d'attente les requêtes utilisateur lorsque la connexion
+                            est instable ou inexistante et les exécutes quand la connexion devient stable</li>
+                    </ul>
+                </section>
+              </section>
+              <section>
+                <section>
+                    <h2>Fonctionnement des PWA</h2>
+                    <p>(détails)</p>
+                </section>
+                <section>
+                    <h3>Enregistrement du SW</h3>
+                    <div>
+                        <p class="file-title">index.html</p>
+                        <pre><code data-trim class="">
+                        &lt;html&gt;
+                        &lt;head&gt;
+                            ...
+                        &lt;/head&gt;
+                        &lt;body&gt;
+                            <div class="title">Service worker test...</div>
+                            <script src="init.js"></script>
+                        &lt;/body&gt;
+                        &lt;/html&gt;
+                        </code></pre>
+
+                        <p class="file-title">init.js</p>
+                        <pre><code data-trim class="">
+                        if ('serviceWorker' in navigator) { /* check SW support */
+                            navigator.serviceWorker.register('/sw.js')
+                            .then(function (registration) {
+                                console.log("Service worker registered successfully.")
+                            })
+                        } else {
+                            console.log("Sorry !!! Your browser doesn't support SW.")
+                        }
+                        </code></pre>
+                    </div>
+                </section>
+                <section>
+                        <strong>Après son enregistrement</strong> le navigateur déclenche des <strong>évènements</strong> qui
+                        font passer le SW par une série d'étapes (<strong>lifecycle</strong>).
+                </section>
+                <section>
+                    <h3>Cycle de vie d'un SW</h3>
+                </section>
+                <section>
+                    <p>un <strong>SW</strong> se présente comme suit :</p>
+                    <p class="file-title">sw.js</p>
+                    <pre><code data-trim>
+                        self.addEventListener("install", function (event) {
+                            // ...
+                        })
+                        self.addEventListener("activate", function (event) {
+                            ...
+                        })
+                        self.addEventListener("fetch", function (event) {
+                            ...
+                        })
+                        self.addEventListener("push", function (event) {
+                            ...
+                        })
+
+                        self.addEventListener("sync", function (event) {
+                            ...
+                        })
+                        ...
+                    </code></pre>
+                </section>
+                <section>
+                    <h3>install <small>(installation)</small></h3>
+                    <p>Premier évènement que reçoit le SW.</p>
+                    <p><strong>Que faire ?</strong><br/>
+                    Mettre en place l'environnement nécessaire au fonctionnement du SW
+                    <small>(remplir le cache, mettre à jour IndexedDb).</small>
+                    </p>
+                </section>
+                <section>
+                    <h3>install <small>(installation)</small></h3>
+                    <p class="file-title">sw.js</p>
+                    <pre><code data-trim>
+                    self.addEventListener("install", function (event) {
+                        event.waitUntil(
+                            var CACHE_NAME = "cache-1"
+                            var urlsToCache = [
+                                "/style.css",
+                                "/test.json"
+                            ]
+                            caches.open(CACHE_NAME)
+                            .then(function(cache) {
+                                console.log("cache opened")
+                                return cache.addAll(urlsToCache)
+                            })
+                            .catch(function(err) {
+                                console.log("Unable to install the SW : ", err)
+                            })
+                        )
+                    })
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>activate <small>(activation)</small></h3>
+                    <p>Evènement reçu lorsque l'installation réussie et qu'aucune version antérieure du SW n'est active.</p>
+                    <p><strong>Que faire ?</strong><br/>
+                        Actions qu'on ne pouvait pas éxecuter lorsqu'une version antérieure du SW était active
+                        <small>(Supprimer les ressources inutiles laissées par une version antérieure du SW).</small>
+                    </p>
+                </section>
+                <section>
+                    <h3>activate <small>(activation)</small></h3>
+                    <p class="file-title">sw.js</p>
+                    <pre><code data-trim>
+                    self.addEventListener('activate', function (event) {
+                        console.log('V1 now ready to handle fetches!')
+                        event.waitUntil(new Promise( function(resolve) {
+                            // do something ...
+                            resolve()
+                        }))
+
+                    })
+                    </code></pre>
+                </section>
+                <section>
+                    <h3>waiting <small>(en-entente)</small></h3>
+                    <p>Reçu après l'installation s'il existe déjà une version antérieure active du SW.</p>
+                    <p><strong>self.skipWaiting()</strong> permet de sauter l'étape <strong>"waiting"</strong> et de passer directement à l'étape <strong>"activate"</strong>
+                        après l'installation.</p>
+
+
+                </section>
+
+                <section>
+                    <h3>waiting <small>(en-entente)</small></h3>
+                    <p class="sw.js"></p>
+                    <pre><code data-trim>
+                    self.addEventListener('install', function(event) {
+                         /* causes new SW to replace an existing one already installed */
+                        event.waitUntil(self.skipWaiting())
+                    })
+
+                    self.addEventListener('activate', function(event) {
+                        event.waitUntil(new Promise( function(resolve) {
+                            // do something ...
+                            /* take control of all opened clients that where
+                            under the control of current active SW */
+                            self.clients.claim()
+                        }))
+                    })
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>redundant <small>(redondant)</small></h3>
+                    <p>Reçu juste avant que le SW soit remplacé par un nouveau SW.</p>
+                    <p class="sw.js"></p>
+                    <pre><code data-trim>
+                    self.addEventListener('redundant', function(event) {
+                         // do something just before the replacement of the current SW
+                    })
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h4>Note sur Mise à jour des SW</h4>
+                    <p>Un SW actif <strong>est détruit et remplacé</strong> par un nouveau SW <strong>seulement si
+                        l'installation du nouveau SW a réussi et que ce dernier devient actif</strong>.
+                    </p>
+                </section>
+                <section>
+                    <h3>interception des requêtes <small>(Fetch)</small></h3>
+                </section>
+                <section>
+                    <p>
+                        Présentation de deux patterns
+                        <ul>
+                            <li><strong>Cache only</strong> <small>(cache seulement)</small></li>
+                            <li><strong>Cache, falling back to network</strong> <small>(cache, sinon alors réseaux)</small></li>
+                        </ul>
+                    </p>
+                    <p>
+                        <small>pour plus de détails sur les autres patterns existants consulter</small></br>
+                        https://jakearchibald.com/2014/offline-cookbook (en)
+                    </p>
+                </section>
+                <section>
+                    <h4>Cache only</h4>
+                    <div class="text-center">
+                        <img width="50%" class="no-sytle" src="images/cache_only.png">
+                    </div>
+                    <p class="file-title">sw.js</p>
+                    <pre><code data-trim>
+                    self.addEventListener('fetch', function(event) {
+                        // If a match isn't found in the cache, the response
+                        // will look like a connexion error
+                        event.respondWith(caches.match(event.request))
+                    });
+                    </code></pre>
+                </section>
+                <section>
+                    <h4>Cache, falling back to network</h4>
+                    <div class="text-center">
+                        <img width="50%" class="no-sytle" src="images/cache_falling_back_to_network.png">
+                    </div>
+                    <p class="file-title">sw.js</p>
+                    <pre><code data-trim>
+                    self.addEventListener('fetch', function(event) {
+                    event.respondWith(
+                        caches.match(event.request)
+                        .then(function(response) {
+                            return response || fetch(event.request)
+                        })
+                    )
+                    })
+                    </code></pre>
+                </section>
+                <section>
+                    <h3>Push Notification</h3>
+                </section>
+                <section>
+                    <div class="text-center">
+                        <img width="50%" class="no-sytle" src="images/push_message.png">
+                    </div>
+                    <p><small><strong>Push Notification</strong> = affichage d'une information à la reception d'un message de push reçu par le SW.</small></p>
+
+                    <p><small>Pour plus de détails sur l'implémentation des Push Notification consulter</small><br/>
+                        https://web-push-book.gauntface.com/
+                    </p>
+
+                </section>
+                <section>
+                    <h3>Synchronisation <small>(Background Sync)</small></h3>
+                </section>
+                <section>
+                    <p>le <strong>Background Sync</strong> permet de mettre dans une file d'attente dans le navigateur, des requêtes de l'utilisateur  qui s'exécuterons plus tard dans le <strong>thread du SW</strong> quand la connexion de l'utilisateur sera stable.</p>
+                    <p><small>Avantage</small><br/>
+                    <strong>Pas besoin que le navigateur soit ouvert pour synchroniser</strong></p>
+                </section>
+                <section>
+                    <h3>Background Sync</h3>
+                    <p class="file-title">init.js</p>
+                    <pre><code data-trim>
+                    // Register your service worker:
+                    navigator.serviceWorker.register('/sw.js');
+
+                    // Then later, request a one-off sync:
+                    if ('serviceWorker' in navigator && 'SyncManager' in window) {
+                        navigator.serviceWorker.ready
+                        .then(function(swRegistration) {
+                            return swRegistration.sync.register('mySyncTag')
+                        });
+                    } else {
+                        // serviceworker/sync not supported
+                    }
+                    </code></pre>
+
+                    <p class="file-title">sw.js</p>
+                    <pre><code data-trim>
+                    self.addEventListener('sync', function(event) {
+                        if (event.tag == 'mySyncTag') {
+                            event.waitUntil(doSomeStuff())
+                        }
+                    })
+                    </code></pre>
+                </section>
+             </section>
+
+              <section>
+                <section>
+                    <h3>Ajout à l'écran d'accueil <small>(installable)</small></h3>
+                </section>
+                <section>
+                    <p>l'ajout d'une application web à l'écran d'accueil est possible grâce à la présence d'un <strong>fichier manifest</strong>.</p>
+                </section>
+                <section>
+                    <p><strong>le fichier manifest</strong> = <strong>fichier JSON</strong> qui fournit des informations <small>(nom, icone, écran de démarrage, url de démarrage, etc.)</small> sur une application.</p>
+                </section>
+                <section>
+                        <p class="file-title"> manifest.json</p>
+                        <pre><code data-trim>
+                        {
+                            "short_name": "MyAppName",
+                            "name": "My Application name",
+                            "icons": [
+                            {
+                                "src": "launcher-icon-2x.png",
+                                "sizes": "96x96",
+                                "type": "image/png"
+                            },
+                            {
+                                "src": "launcher-icon-4x.png",
+                                "sizes": "192x192",
+                                "type": "image/png"
+                            }
+                            ],
+                            "start_url": "/index.html",
+                            "display": "standalone",
+                            "orientation": "landscape"
+                        }
+                        </code></pre>
+                </section>
+                <section>
+                    <h4>Intégration du manifest à une application</h4>
+                    <ul>
+                        <li>créer un fichier json représentant le manifest</li>
+                        <li>lier le fichier manifest aux pages en utilisant la balise <strong>link</strong> comme suit :
+                            <pre><code data-trim>
+                                <link rel="manifest" href="/manifest.json">
+                            </code></pre>
+                        </li>
+
+                    </ul>
+                </section>
+                <section>
+                    <p>Il est possible d'ajouter une app. installable à l'écran d'accueil depuis le menu du navigateur.</p>
+                    <div class="text-center">
+                        <img class="no-sytle" src="images/add_to_home_screen.png">
+                    </div>
+                </section>
+              </section>
+
+              <section>
+                <section>
+                    <h3>Application Shell Architecture <small>(Coquille d'Application)</small></h3>
+                </section>
+                <section>
+                    <p>L'<strong>App Shell</strong> = minimum de HTML, CSS et JavaScript requis pour afficher l'interface utilisateur.</p>
+                </section>
+                <section>
+                    Combiné à l'utilisation des <strong>SW</strong>, l'<strong>App Shell</strong> permet lorsqu'il est mis en cache :
+                    <ul>
+                        <li><strong>d'assurer la performance de l'application</strong> : chargement rapide lors de visites répétées
+                        <small>(ex: cas des Single Page Applications pour lesquelles le temps de chargement est  généralement long)</small>.</li>
+                        <li><strong>d'améliorer l'expérience offline</strong> : chargement du contenu disponible en cache dans la coquille.</li>
+                    </ul>
+                </section>
+                <section>
+                    <div class="text-center">
+                        <img class="no-sytle" src="images/app_shell.png">
+                    </div>
+                </section>
+              </section>
+              <section>
+                <section>
+                    <h3>Conclusion</h3>
+                </section>
+                <section>
+                  Les Progessive Web Apps (<strong>PWA</strong>) sont une <strong>combinaison de technologies web</strong> dans l'objectif d'améliorer l'expérience de l'utilisateur (UX)
+                  en lui <strong>offrant les mêmes fonctionnalités qu'offre une application native</strong>.
+                </section>
+                <section>
+                    <p><strong>le SW constitue le socle des PWA.</strong></p>
+                    <p> Un SW est un simple <strong>fichier JavaScript</strong> qui s'installe dans le navigateur de l'utilisateur
+                     et qui <strong>exécute des actions en réponse à des évènements</strong> que déclenche le navigateur.</p>
+                    <p><small><strong>Les SW ne fonctionnent qu'avec une connexion sécurisée (HTTPS).</strong></small></p>
+                </section>
+                <section>
+                    <strong>Une application est dite progressive</strong> lorsqu'elle offre les fonctionnalités suivantes :
+                    <ul class="text-medium">
+                        <li>responsive</li>
+                        <li>installable</li>
+                        <li>offline-first</li>
+                        <li>affichage des Notifications à la reception de messages de Push</li>
+                        <li>supporte la synchronisation</li>
+                    </ul>
+                </section>
+                <section>
+                    <p>Le support des SW et des fonctionnalités qu'ils offrent <small>(Push, Fetch, background Sync, etc.)</small>
+                    varient d'une version de navigateur à une autre.</p>
+                    <p><small>Pour avoir une idée du statu actuel du support de ces
+                        fonctionnalités au sein des navigateurs, consulter :</small><br/>
+                        https://jakearchibald.github.io/isserviceworkerready/
+                    </p>
+
+                </section>
+              </section>
+            <section>
+                <h2>Merci</h2>
+            </section>
+            <section>
+                <p class="text-left"><strong>Sources des images :</strong></p>
+                <ul class="text-medium">
+                    <li>https://jakearchibald.com/2014/offline-cookbook/</li>
+                    <li>https://developers.google.com/web/updates/2015/11/app-shell</li>
+                </ul>
+                <p class="text-left"><strong>Ressources :</strong></p>
+                <ul class="text-medium">
+                    <li>https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/lifecycle</li>
+                    <li>https://developers.google.com/web/updates/2015/11/app-shell</li>
+                    <li>https://jakearchibald.com/2014/offline-cookbook/</li>
+                    <li>https://www.smashingmagazine.com/2016/02/making-a-service-worker/</li>
+                </ul>
+
+            </section>
+
+            </div>
+        </div>
+        <script src="head.min.js"></script>
+
+        <script src="revealjs/js/reveal.js"></script>
+        <script>
+        Reveal.initialize({
+        dependencies: [
+            // Syntax highlight for <code> elements
+            { src: 'revealjs/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+        });
+        </script>
+
+    </body>
+</html>
