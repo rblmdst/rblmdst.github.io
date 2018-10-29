@@ -108,54 +108,64 @@
           <p>
             Root Module
           </p>
-          <small style="display: block">
-            <p>
-              <pre><code class="ts">
+          <p>
+            <pre><code class="ts">
             import { BrowserModule } from '@angular/platform-browser';
             import { NgModule } from '@angular/core';
-            import { FormsModule } from '@angular/forms';
-            import { HttpClientModule } from '@angular/common/http';
-
             import { AppComponent } from './app.component';
 
             /* the AppModule class with the @NgModule decorator */
             @NgModule({
-              declarations: [
-                AppComponent
-              ],
-              imports: [
-                BrowserModule, FormsModule, HttpClientModule
-              ],
+              declarations: [AppComponent],
+              imports: [BrowserModule],
               providers: [],
               bootstrap: [AppComponent]
             })
             export class AppModule { }
             </code></pre>
-            </p>
-          </small>
+          </p>
         </section>
         <section>
           <p>
             Root Component
           </p>
-          <small style="display: block">
-            <p>
-              <pre><code class="ts">
-
+          <p>
+            <pre><code class="ts">
+                import { Component } from '@angular/core';
+                @Component({
+                  selector: 'app-root',
+                  template: `<h1> Welcome to {{ title }}!</h1>`,
+                  styles: [`
+                    h1 {
+                      text-align: center;
+                    }
+                  `]
+                })
+                export class AppComponent {
+                  title = 'app';
+                }
                 </code></pre>
-            </p>
-          </small>
+          </p>
         </section>
         <section>
           <p>
             The app bootstrapping code </p>
-          <small style="display: block">
-            <p>
-              <pre><code class="ts">
-
-                  </code></pre>
-            </p>
-          </small>
+          <p>
+            <pre><code class="ts">
+              import { enableProdMode } from '@angular/core';
+              import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+              
+              import { AppModule } from './app/app.module';
+              import { environment } from './environments/environment';
+              
+              if (environment.production) {
+                enableProdMode();
+              }
+              
+              platformBrowserDynamic().bootstrapModule(AppModule)
+                .catch(err => console.log(err));
+              </code></pre>
+          </p>
         </section>
       </section>
       </section>
@@ -174,7 +184,7 @@
             // @NgModule decorator with its metadata
             @NgModule({
               declarations: [AppComponent, ItemDirective],
-              imports: [BrowserModule,FormsModule,HttpClientModule],
+              imports: [BrowserModule, FormsModule, HttpClientModule],
               providers: [],
               bootstrap: [AppComponent]
             })

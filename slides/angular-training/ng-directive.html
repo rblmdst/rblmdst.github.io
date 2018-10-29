@@ -1,0 +1,437 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>reveal.js</title>
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <!-- <link rel="stylesheet" href="css/theme/black.css"> -->
+  <link rel="stylesheet" href="css/theme/white.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <!--  custom css -->
+  <link rel="stylesheet" href="css/custom.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <!--
+        ff7200
+        #662d91
+      -->
+      <!--  <section data-background-opacity="0.1" data-background-image="assets/code.png"> -->
+      <section>
+        <!-- <div>
+          <img class="no-border" src="assets/angular.png" alt="angular">
+        </div> -->
+
+        <div>
+          <img class="no-border" src="assets/gebeya-brand.png" alt="logo">
+        </div>
+        <h1 style="color: #662d91">Angular Training</h1>
+
+        <h4>Directives</h4>
+        <h5 class="color-orange">Part 1 : Built-in Directives</h5>
+      </section>
+    </div>
+
+    <!-- TRAINING PURPOSE -->
+    <div class="slides">
+      <section>
+        <section>
+          <h1>Purpose</h1>
+          <p>
+            <ul>
+              <li>Know the difference between directives and components.</li>
+              <li>Learn Angular built-in directives.</li>
+            </ul>
+          </p>
+        </section>
+      </section>
+    </div>
+
+    <!--  -->
+    <div class="slides">
+      <section>
+        <section>
+          <h1>Directives</h1>
+        </section>
+        <section>
+          <p>Directives are
+            <strong class="color-orange">components without a view</strong>. They are
+            <strong class="color-orange"> components without a template.</strong>
+          </p>
+        </section>
+        <section>
+          <p>
+            <strong class="color-orange">Directives</strong> : are entities that change the behavior of components or elements and are one of the core
+            building blocks Angular.
+          </p>
+        </section>
+        <section>
+          <p>There are two main types of directives :</p>
+          <ul>
+            <li>
+              <strong class="color-orange">Attribute directives</strong> : change the behavior of a component or element but don't affect the structure
+              of the DOM.</li>
+            <li>
+              <strong class="color-orange">Structural directives</strong> : change the the structure of the DOM.</li>
+          </ul>
+        </section>
+      </section>
+    </div>
+    <div class="slides">
+      <section>
+        <section>
+          <h1>Built-in attribute directives</h1>
+        </section>
+        <section>
+          <h2>NgStyle</h2>
+        </section>
+        <section>
+          <p>
+            <strong class="color-orange">[NgStyle]</strong> Directive</p>
+          <p>Allows to modify a component or element's style attribute.
+          </p>
+          <p>
+            <pre><code class="ts">
+            @Component({
+              selector: 'style-example',
+              template: `
+              &lt;p style="padding: 1rem"
+              [ngStyle]="{'font-weight': 'bold', borderBottom: borderStyle }">
+              &lt;/p>
+              `
+            })
+            export class StyleExampleComponent {
+              borderStyle: string = '1px solid black';
+            }
+            </code></pre>
+          </p>
+        </section>
+        <section>
+          <h2>NgClass</h2>
+        </section>
+        <section>
+          <p>
+            <strong class="color-orange">[NgClass]</strong> Directive </p>
+          <p>Changes the class attribute that is bound to the component or element it's attached to.
+          </p>
+          <p>There are a few different ways of using the directive :</p>
+          <ul>
+            <li>Binding a string</li>
+            <li>Binding an array</li>
+            <li>Binding an object</li>
+          </ul>
+        </section>
+        <section>
+          <p>
+            <strong class="color-orange">[NgClass]</strong> (Binding a string)</p>
+          <p>
+            <pre><code class="ts">
+              @Component({
+                selector: 'class-as-string',
+                template: `
+                &lt;p ngClass="centered-text underlined" class="orange">&lt;/p>
+                `,
+                styles: [`
+                  .centered-text {
+                    text-align: center;
+                  }
+                  .underlined {
+                    border-bottom: 1px solid #ccc;
+                  }
+                  .orange {
+                    color: orange;
+                  }
+                `]
+              })
+              export class ClassAsStringComponent {
+              }
+            </code></pre>
+          </p>
+        </section>
+        <section>
+          <p>
+            <strong class="color-orange">[NgClass]</strong> (Binding an array)</p>
+          <p>
+            <pre><code class="ts">
+              @Component({
+                selector: 'class-as-array',
+                template: `
+                &lt;p [ngClass]="['warning', 'big']">&lt;/p>
+                `,
+                styles: [`
+                  .warning {
+                      color: red;
+                      font-weight: bold;
+                  }
+                  .big {
+                      font-size: 1.2rem;
+                  }
+                `]
+            })
+            export class ClassAsArrayComponent {
+            }
+              </code></pre>
+          </p>
+        </section>
+        <section>
+          <p>
+            <strong class="color-orange">[NgClass]</strong> (Binding an object)</p>
+          <p>
+            <pre><code class="ts">
+              @Component({
+                selector: 'class-as-object',
+                template: `
+                &lt;p [ngClass]="{ card: true, dark: false, flat: flat }">
+                  <br/>
+                  <button type="button" (click)="flat=!flat">Toggle Flat</button>
+                &lt;/p>
+                `,
+                styles: [`
+                  .card {
+                    border: 1px solid #eee;
+                    padding: 1rem;
+                    box-shadow: 2px 2px 2px #888888;
+                  }
+                  .dark {
+                    background-color: #444;
+                    border-color: #000;
+                    color: #fff;
+                  }
+                  .flat {
+                    box-shadow: none;
+                  }
+                `]
+            })
+            export class ClassAsObjectComponent {
+              flat: boolean = true;
+            }
+              </code></pre>
+          </p>
+        </section>
+      </section>
+    </div>
+
+    <div class="slides">
+      <section>
+        <section>
+          <h1>Built-in structural directives</h1>
+        </section>
+        <section>
+          <h2>NgIf</h2>
+        </section>
+        <section>
+          <p>
+            <strong class="color-orange">*ngIf</strong> Directive</p>
+          <p> Conditionally renders components or elements based on whether or not an expression is true or false.
+          </p>
+          <p>
+            <pre><code class="ts">
+              @Component({
+                selector: 'app',
+                template: `
+                  <button type="button" (click)="toggleExists()">Toggle Component</button>
+                  &lt;if-example *ngIf="exists">
+                    Hello
+                  &lt;/if-example>
+                `
+              })
+              export class AppComponent {
+                exists: boolean = true;
+                toggleExists() {
+                  this.exists = !this.exists;
+                }
+              }
+              </code></pre>
+          </p>
+        </section>
+        <section>
+          <p>
+            <strong class="color-orange">*ngIf</strong> Directive</p>
+          <p>
+            <pre><code class="html">
+              &lt;div *ngIf="hero" class="name">{{hero.name}} &lt;/div>
+
+              <!-- verbose -->
+
+              &lt;ng-template [ngIf]="hero">
+                <div class="name">{{hero.name}}</div>
+              &lt;/ng-template>
+
+              <!-- with Logical expression -->
+              &lt;div *ngIf="counter > 1">example &lt;/div>
+
+            </code></pre>
+          </p>
+        </section>
+        <section>
+          <p>
+            <strong class="color-orange">*ngIf..else</strong>
+          </p>
+          <p>
+            <pre><code class="html">
+              &lt;div *ngIf="counter > 1; else elseBlock">example &lt;/div>
+              &lt;ng-template #elseBlock>else example &lt;/ng-template>
+
+              </code></pre>
+          </p>
+        </section>
+        <section>
+          <p>
+            <strong class="color-orange">*ngFor</strong> Directive</p>
+          <p>
+            <strong>ngFor</strong> directive is a way of
+            <strong>repeating</strong> a template by using each item of an iterable as that template's context.
+          </p>
+        </section>
+        <section>
+          <h2>NgFor</h2>
+        </section>
+        <section>
+          <p>
+            <strong class="color-orange">*ngFor</strong> Directive</p>
+          <p>
+            <pre><code class="ts">
+                @Component({
+                  selector: 'app',
+                  template: `
+                    <for-example *ngFor="let episode of episodes" [episode]="episode">
+                      {{episode.title}}
+                    </for-example>
+                  `
+                })
+                export class AppComponent {
+                  episodes: any[] = [
+                    { title: 'Winter Is Coming', director: 'Tim Van Patten' },
+                    { title: 'The Kingsroad', director: 'Tim Van Patten' },
+                    { title: 'The Pointy End', director: 'Daniel Minahan' }
+                  ];
+                }
+                  </code></pre>
+          </p>
+        </section>
+
+        <section>
+          <p>
+            <strong class="color-orange">*ngFor</strong> Directive</p>
+          <p>
+            <p>
+              <strong>ngFor</strong> also provides some other values that can be bound to:</p>
+            <ul>
+              <li>
+                <strong class="color-orange">index</strong> - position of the current item in the iterable starting at 0</li>
+              <li>
+                <strong class="color-orange">first</strong> -
+                <strong>true</strong> if the current item is the first item in the iterable</li>
+              <li>
+                <strong class="color-orange">last</strong> -
+                <strong>true</strong> if the current item is the last item in the iterable</li>
+              <li>
+                <strong class="color-orange">even</strong> -
+                <strong>true</strong> if the current index is an even number</li>
+              <li>
+                <strong class="color-orange">odd</strong> -
+                <strong>true</strong> if the current index is an odd number</li>
+            </ul>
+          </p>
+        </section>
+        <section>
+          <p>
+            <strong class="color-orange">*ngFor</strong> Directive</p>
+          <p>
+            <pre><code class="ts">
+            @Component({
+              selector: 'app',
+              template: `
+              <for-example
+                *ngFor="let episode of episodes; let i = index; let isOdd = odd"
+                [episode]="episode"
+                [ngClass]="{ odd: isOdd }">
+                {{i+1}}. {{episode.title}}
+              </for-example>
+              `
+            })
+            export class AppComponent {
+              // ...
+            }
+            </code></pre>
+          </p>
+        </section>
+        <section>
+          <h2>ngSwitch</h2>
+        </section>
+
+        <section>
+          <p>
+            <strong class="color-orange">[ngSwitch]</strong> Directives</p>
+          <small style="display: block;">
+            <p>
+              <pre><code class="ts">
+              @Component({
+                selector: 'app',
+                template: `
+                <div [ngSwitch]="door">
+                  <door [id]="1" *ngSwitchCase="1">A new car!</door>
+                  <door [id]="2" *ngSwitchCase="2">A washer and dryer!</door>
+                  <door [id]="3" *ngSwitchCase="3">A trip to Tahiti!</door>
+                  <door [id]="4" *ngSwitchCase="4">25 000 dollars!</door>
+                  <door *ngSwitchDefault class="closed"></door>
+                </div>
+                <div class="options">
+                  <input type="radio" name="door" (click)="setDoor(1)" /> Door 1
+                  <input type="radio" name="door" (click)="setDoor(2)" /> Door 2
+                  <input type="radio" name="door" (click)="setDoor(3)" /> Door 3
+                  <input type="radio" selected="selected" name="door" (click)="setDoor()"/> Close all
+                </div>
+                `
+            })
+            export class AppComponent {
+              door: number;
+              setDoor(num: number) {
+                this.door = num;
+              }
+            }
+                    </code></pre>
+            </p>
+          </small>
+        </section>
+      </section>
+    </div>
+  </div>
+
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
+
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+      dependencies: [
+        { src: 'plugin/markdown/marked.js' },
+        { src: 'plugin/markdown/markdown.js' },
+        { src: 'plugin/notes/notes.js', async: true },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+      ]
+    });
+  </script>
+</body>
+
+</html>

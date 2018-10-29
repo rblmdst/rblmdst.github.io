@@ -1,0 +1,279 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>reveal.js</title>
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <!-- <link rel="stylesheet" href="css/theme/black.css"> -->
+  <link rel="stylesheet" href="css/theme/white.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <!--  custom css -->
+  <link rel="stylesheet" href="css/custom.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <!--
+        ff7200
+        #662d91
+      -->
+      <!--  <section data-background-opacity="0.1" data-background-image="assets/code.png"> -->
+      <section>
+        <!-- <div>
+          <img class="no-border" src="assets/angular.png" alt="angular">
+        </div> -->
+
+        <div>
+          <img class="no-border" src="assets/gebeya-brand.png" alt="logo">
+        </div>
+        <h1 style="color: #662d91">Angular Training</h1>
+
+        <h4>Angular Quick Start</h4>
+      </section>
+    </div>
+
+    <!-- TRAINING PURPOSE -->
+    <div class="slides">
+      <section>
+        <section>
+          <h1>Purpose</h1>
+          <p>Create a basic Angular application and run it using the
+            <strong>Angular CLI</strong>.</p>
+        </section>
+      </section>
+    </div>
+
+    <!-- Angular CL -->
+    <div class="slides">
+      <section>
+        <section>
+          <h1>Angular CLI</h1>
+        </section>
+        <section>
+          <p>
+            <strong class="color-orange">Angular CLI</strong> is Tool used to create and manage an Angular app. It provides the ability to: </p>
+          <ul>
+            <li>create a project from scratch</li>
+            <li>scaffold components, directives, services, etc.</li>
+            <li>lint your code</li>
+            <li>serve the application</li>
+            <li>run your unit tests and end to end tests.</li>
+          </ul>
+        </section>
+        <section>
+          <p class="color-orange">
+            <strong>Installation</strong>
+          </p>
+          <p>
+            <pre><code class="bash">
+                # install the angular-cli globally
+                $ npm install -g angular-cli
+                </code></pre>
+          </p>
+          <p class="color-orange">
+            <strong>Check the version of angular-cli installed</strong>
+          </p>
+          <p>
+            <pre><code class="bash">
+              $ ng -v
+                / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
+               / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
+              / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
+             /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
+                            |___/
+              @angular/cli: 1.2.6
+              node: 6.6.0
+              os: linux x64
+              </code></pre>
+          </p>
+        </section>
+        <section>
+          <p class="color-orange">
+            <strong>Show command help</strong>
+          </p>
+          <p>
+            <pre><code class="bash">
+              # show help for all command
+              ng --help
+
+              # show help for a specific command
+              # ng &lt;cmd&gt; --help
+              ng new --help
+            </code></pre>
+          </p>
+        </section>
+
+      </section>
+    </div>
+
+    <div class="slides">
+      <section>
+        <section>
+          <h1>Create a new app</h1>
+        </section>
+        <section>
+          <p>
+            There are two ways to create a new application using Angular CLI :
+          </p>
+          <p>
+            <pre><code class="bash">
+              # create a new application in the current directory
+              $ ng init
+              </code></pre>
+          </p>
+          <small>or</small>
+          <p>
+            <pre><code class="bash">
+              # create a new directory and run ng init inside the new directory
+              $ ng new &lt;app-name&gt;
+              </code></pre>
+          </p>
+          <p>
+            <strong class="color-orange">ng new</strong> is similar to
+            <strong class="color-orange">ng init</strong>, except that it also
+            <strong>creates a directory</strong> for you.</p>
+
+        </section>
+        <section>
+          <p class="color-orange">
+            <strong>Creating a new app</strong>
+          </p>
+          <p>
+            <pre><code class="bash">
+                # create a new application
+                $ ng new myApp
+                </code></pre>
+          </p>
+          <ul>
+            The command will :
+            <li>create a new folder myApp
+              <small>(containing a default project structure)</small> in the current directory;
+            </li>
+            <li>install dependencies;</li>
+            <li>create a typescript configuration files;</li>
+            <li>set up the project directory (myApp) as new git repository;</li>
+            <li>generate Angular CLI workspace file (angular.json).</li>
+          </ul>
+        </section>
+      </section>
+    </div>
+
+    <div class="slides">
+      <section>
+        <section>
+          <h1>Angular project structure</h1>
+        </section>
+        <section>
+          <p>After creating the project, go to the generated project folder </p>
+          <p>
+            <pre><code class="bash">
+              # go to the generated project folder
+              cd myApp
+              </code></pre>
+          </p>
+        </section>
+        <section>
+          <p>
+            The generated project folder content
+          </p>
+          <p>
+            <small class="color-orange">(Depends on the version of the angular-cli used to generate the project)</small>
+          </p>
+          <p>
+            <small>We will go in details about each of these files / folder later </small>
+          </p>
+        </section>
+      </section>
+    </div>
+    <div class="slides">
+      <section>
+        <section>
+          <h1>Run the application</h1>
+        </section>
+        <section>
+          <p>
+            <pre><code class="bash">
+              # start the built-in development server to serve the app
+              ng serve
+
+              ** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+            </code></pre>
+          </p>
+          <p>Navigate to
+            <strong class="color-orange">http://localhost:4200/</strong> to see the application in action:</p>
+        </section>
+      </section>
+    </div>
+
+
+
+    <!-- <div class="slides">
+      <section>
+        <section>Closure</section>
+        <section></section>
+      </section>
+    </div>
+
+    <div class="slides">
+      <section>
+        <section></section>
+        <section></section>
+      </section>
+    </div>
+
+    <div class="slides">
+      <section>
+        <section></section>
+        <section></section>
+      </section>
+    </div>
+
+    <div class="slides">
+      <section>
+        <section>Slide 1</section>
+        <section>Slide 2</section>
+      </section>
+    </div>
+ -->
+    <!--  <div class="slides">
+      <section>Slide 1</section>
+      <section>Slide 2</section>
+    </div> -->
+  </div>
+
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
+
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+      dependencies: [
+        { src: 'plugin/markdown/marked.js' },
+        { src: 'plugin/markdown/markdown.js' },
+        { src: 'plugin/notes/notes.js', async: true },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+      ]
+    });
+  </script>
+</body>
+
+</html>
