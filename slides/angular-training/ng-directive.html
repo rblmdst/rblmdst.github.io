@@ -294,15 +294,15 @@
           </p>
         </section>
         <section>
+          <h2>NgFor</h2>
+        </section>
+        <section>
           <p>
             <strong class="color-orange">*ngFor</strong> Directive</p>
           <p>
             <strong>ngFor</strong> directive is a way of
             <strong>repeating</strong> a template by using each item of an iterable as that template's context.
           </p>
-        </section>
-        <section>
-          <h2>NgFor</h2>
         </section>
         <section>
           <p>
@@ -312,9 +312,9 @@
                 @Component({
                   selector: 'app',
                   template: `
-                    <for-example *ngFor="let episode of episodes" [episode]="episode">
+                    &lt;for-example *ngFor="let episode of episodes" [episode]="episode">
                       {{episode.title}}
-                    </for-example>
+                    &lt;/for-example>
                   `
                 })
                 export class AppComponent {
@@ -360,12 +360,12 @@
             @Component({
               selector: 'app',
               template: `
-              <for-example
+              &lt;for-example
                 *ngFor="let episode of episodes; let i = index; let isOdd = odd"
                 [episode]="episode"
                 [ngClass]="{ odd: isOdd }">
                 {{i+1}}. {{episode.title}}
-              </for-example>
+              &lt;/for-example>
               `
             })
             export class AppComponent {
@@ -387,13 +387,13 @@
               @Component({
                 selector: 'app',
                 template: `
-                <div [ngSwitch]="door">
-                  <door [id]="1" *ngSwitchCase="1">A new car!</door>
-                  <door [id]="2" *ngSwitchCase="2">A washer and dryer!</door>
-                  <door [id]="3" *ngSwitchCase="3">A trip to Tahiti!</door>
-                  <door [id]="4" *ngSwitchCase="4">25 000 dollars!</door>
-                  <door *ngSwitchDefault class="closed"></door>
-                </div>
+                &lt;div [ngSwitch]="door">
+                  &lt;door [id]="1" *ngSwitchCase="1">A new car!&lt;/door>
+                  &lt;door [id]="2" *ngSwitchCase="2">A washer and dryer!&lt;/door>
+                  &lt;door [id]="3" *ngSwitchCase="3">A trip to Tahiti!&lt;/door>
+                  &lt;door [id]="4" *ngSwitchCase="4">25 000 dollars!&lt;/door>
+                  &lt;door *ngSwitchDefault class="closed">&lt;/door>
+                &lt;/div>
                 <div class="options">
                   <input type="radio" name="door" (click)="setDoor(1)" /> Door 1
                   <input type="radio" name="door" (click)="setDoor(2)" /> Door 2
