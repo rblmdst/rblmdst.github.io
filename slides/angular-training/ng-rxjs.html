@@ -57,11 +57,9 @@
           <p>
             <ul>
               <li>Notion of Reactive Programming.</li>
-              <li>Diffrent way to create Observable.</li>
+              <li>Different way to create Observable.</li>
               <li>Subscribe/Unsubscribe to a stream.</li>
-              <li>Handle error.</li>
-              <li>Learn some usefull operators</li>
-              <li>Cold vs Hot Observables.</li>
+              <li>Learn some usefull operators.</li>
             </ul>
           </p>
         </section>
@@ -89,7 +87,7 @@
           </p>
           <p>
             <pre><code class="js">
-              [0,1,2,3,4]
+            [0, 1, 2, 3, 4]
             </code></pre>
           </p>
         </section>
@@ -98,7 +96,7 @@
             Another stream might be a sequence of x and y positions of mouse click events, like so: </p>
           <p>
             <pre><code class="js">
-              [(12,34), (345,22), (1,993)]
+            [(12,34), (345,22), (1,993)]
           </code></pre>
           </p>
         </section>
@@ -107,11 +105,11 @@
             A stream which contains a json representation of the whole form as the user enters data, like so:
             <p>
               <pre><code class="js">
-                [
+              [
                 {"name": "A" },
                 {"name": "As" },
                 {"name": "Asi" },
-                {"name": "Asim" }  
+                {"name": "Asim" }
               ]
             </code></pre>
             </p>
@@ -140,8 +138,7 @@
             <strong class="color-orange">R</strong>eactive E
             <strong class="color-orange">x</strong>tensions for
             <strong class="color-orange">J</strong>ava
-            <strong class="color-orange">S</strong>cript
-          </p>
+            <strong class="color-orange">S</strong>cript</p>
         </section>
         <section>
           <p>
@@ -175,7 +172,7 @@
           <p>Create an Observable using a constructor</p>
           <p>
             <pre><code class="ts">
-            import {Observable} from 'rxjs';
+            import { Observable } from 'rxjs';
             const myObservable = new Observable(observer => {
               setTimeout(() => { observer.next(42); }, 1000);
               setTimeout(() => { observer.next(43); }, 2000);
@@ -183,8 +180,8 @@
             });
             </code></pre>
           </p>
-          <p>To listen to the stream you must subscribe to it by calling
-            <strong>subscribe</strong> onto the observable.</p>
+          <p>Call
+            <strong>subscribe</strong> onto the observable to listen to the stream</p>
           <p>
             <pre><code class="ts">
               let subscription = myObservable.subscribe(
@@ -200,20 +197,21 @@
           <h3>Unsubscribe and Releasing Resources</h3>
         </section>
         <section>
-          <p>The subscribe method returned a
-            <strong class="color-orange">subscription</strong>.</p>
+          <p>The subscribe method returned a subscription.
+          </p>
           <p>
             <p>
               A
               <strong class="color-orange">Subscription</strong> is an object with an unsubscribe method.
             </p>
-            <p>Call unsubscribe method to stop listen to the stream.
+            <p>Call
+              <strong class="color-orange">unsubscribe</strong> method of the subscription to stop listen to the stream.
             </p>
           </p>
         </section>
         <section>
-          <p>When creating an Observable you can also return a custom callback, that will be invoked when a member listening
-            to the stream has unsubscribed.
+          <p>When creating an Observable you can also return a custom callback
+            <u>that will be invoked when a member listening to the stream has unsubscribed</u>.
             <small>(This is useful for any kind of cleanup that must be implemented.)</small>
           </p>
 
@@ -221,22 +219,24 @@
         <section>
           <p>
             <pre><code class="ts">
-              const myObservable =	new	Observable(observer	=>	{
-                const intervalId = setInterval(()	=>	{
-                  const randomInt = Math.floor(Math.random() * 100);
-                  observer.next(randomInt);
-                },	1000);
-              
-                const onUnSubscribe = () => { clearInterval(intervalId); }
-                return onUnSubscribe;
-              });
-              
-              let	randSubscription	=	myObservable.subscribe(
-                value	=>	console.log(`value : ${value}`),
-                error	=>	console.log(error)
-              );
-              setTimeout(()	=>	{ randSubscription.unsubscribe(); },	2000);
-              </code></pre>
+            import { Observable } from 'rxjs';
+
+            const myObservable = new Observable(observer => {
+              const intervalId = setInterval(() => {
+                const randomInt = Math.floor(Math.random() * 100);
+                observer.next(randomInt);
+              }, 1000);
+
+              const onUnSubscribe = () => { clearInterval(intervalId); }
+              return onUnSubscribe;
+            });
+
+            let randSubscription = myObservable.subscribe(
+              value => console.log(`value : ${value}`),
+              error => console.log(error)
+            );
+            setTimeout(() => { randSubscription.unsubscribe(); }, 2000);
+            </code></pre>
           </p>
         </section>
         <section>
@@ -246,12 +246,12 @@
           <p>RxJS provides other ŵays to create Observables without using the Observable constructor.</p>
         </section>
         <section>
-          <h3>
+          <p class="color-orange">
             Observable that return a single value
-          </h3>
+          </p>
           <p>
             <pre><code class="ts">
-              import {of} from 'rxjs'
+              import { of } from 'rxjs'
 
               const obs = of(10);
               obs.subscribe(d => console.log(d))
@@ -272,17 +272,19 @@
           </p>
         </section>
         <section>
-          <h3>Observable from a collection
-          </h3>
+          <p class="color-orange">Observable from a collection
+          </p>
           <p>
             <pre><code class="ts">
-            import {from} from 'rxjs'
+            import { from } from 'rxjs'
+
             const obs = from([1, 2, 3, 7, 22]);
             obs.subscribe(
               d => console.log(d),
               null, // we don't handle error
               () => console.log('Complete !!'))
             )
+
             /*
             1
             2
@@ -296,13 +298,15 @@
         </section>
 
         <section>
-          <h3>Observable from event
-          </h3>
+          <p class="color-orange">Observable from event
+          </p>
           <p>
             <pre><code class="ts">
             import { fromEvent } from 'rxjs'
+
             const btn = querySelector('.btn-next');
             const obs = fromEvent(btn, 'click')
+            // will print 'Next button clicked !!' every time the user click on the button
             obs.subscribe( _ => console.log('Next button clicked !!'))
           </code></pre>
           </p>
@@ -323,28 +327,286 @@
         <section>
           <h2> Some usefull operators </h2>
         </section>
-        <!--  <section>
-          <h3>
-          </h3>
-          <p>
-            <pre><code class="ts">
-
-              </code></pre>
-          </p>
-        </section> -->
         <section>
-          <h3>Note :</h3>
-          <p>
-            The stream breaks when an error happened i.e
-            <u>the stream stops to emit a new value and the completion function will never been called</u>.
-          </p>
-          <p>Remember to unsubscribe when you do not want to listen to the stream anymore, to avoid memory leaks.</p>
-          <p>
-            By default a new stream is created on each subscription (Cold Observable)
+          <p class="color-orange">
+            interval
           </p>
         </section>
         <section>
-          <h2></h2>
+          <p>
+            <pre><code class="ts">
+              import { interval } from 'rxjs'
+
+              const intervalSub = interval(1000)
+              .subscribe(x => console.log(x))
+
+              setTimeout(() => intervalSub.unsubscribe(), 5000)
+              /*
+              0
+              1
+              2
+              3
+              */
+              </code></pre>
+          </p>
+        </section>
+        <section>
+          <p class="color-orange">
+            take
+          </p>
+        </section>
+        <section>
+          <p>
+            <pre><code class="ts">
+              import { from } from 'rxjs'
+              import { take } from 'rxjs/operators'
+
+              from([3, 11, 13, 7, 23])
+              .pipe(
+                take(3)
+              )
+              .subscribe(x => console.log(x))
+              /*
+              3
+              11
+              13
+              */
+            </code></pre>
+          </p>
+        </section>
+
+        <section>
+          <p>
+            <pre><code class="ts">
+            import { interval } from 'rxjs'
+            import { take } from 'rxjs/operators'
+
+            interval(1000)
+            .pipe(
+              take(5)
+            )
+            .subscribe(x => console.log(x))
+            /*
+            0
+            1
+            2
+            3
+            4
+            */
+            </code></pre>
+          </p>
+        </section>
+        <section>
+          <p class="color-orange">
+            tap
+          </p>
+        </section>
+        <section>
+          <p>
+            <pre><code class="ts">
+            import { from } from 'rxjs'
+            import { tap } from 'rxjs/operators'
+
+            from([1, 2, 3, 4])
+            .pipe(
+              tap(x => console.log(`in : ${x}`)),
+            )
+            .subscribe(x => console.log(x))
+
+            /*
+            in : 1
+            in : 2
+            in : 3
+            in : 4
+            */
+              </code></pre>
+          </p>
+        </section>
+
+        <section>
+          <p class="color-orange">
+            map
+          </p>
+        </section>
+        <section>
+          <p>
+            <pre><code class="ts">
+            import { from } from 'rxjs'
+            import { map } from 'rxjs/operators'
+
+            from([1, 2, 3, 4])
+            .pipe(
+              map(x => x * 2)
+            )
+            .subscribe(x => console.log(x))
+
+            /*
+            2
+            4
+            6
+            8
+            */
+          </code></pre>
+          </p>
+        </section>
+
+        <section>
+          <p class="color-orange">
+            distinctUntilChanged
+          </p>
+        </section>
+        <section>
+          <p>
+            <pre><code class="ts">
+            import { from } from 'rxjs'
+            import { distinctUntilChanged } from 'rxjs/operators'
+
+            from([45, 0, 3, 3, 3, 11, 11, 7])
+            .pipe(distinctUntilChanged())
+            .subscribe(x => console.log(x))
+
+            /*
+            45
+            0
+            3
+            11
+            7
+            */
+            </code></pre>
+          </p>
+        </section>
+
+        <section>
+          <p class="color-orange">
+            merge
+          </p>
+        </section>
+        <section>
+          <p>
+            <pre><code class="ts">
+              import { interval } from 'rxjs'
+              import { merge } from 'rxjs/operators'
+
+              const source1 = interval(1000);
+              const source2 = interval(3000);
+
+              const mergeSub = source1
+              .pipe(
+                merge(source2)
+              )
+              .subscribe(x => console.log(x))
+
+              setTimeout(() => mergeSub.unsubscribe(), 6000)
+
+              /*
+              0
+              1
+              0
+              2
+              3
+              4
+              */
+              </code></pre>
+          </p>
+        </section>
+        <section>
+          <p>
+            <pre><code class="ts">
+            import { interval } from 'rxjs'
+            import { merge } from 'rxjs/operators'
+
+            const source3 = interval(1000).pipe(take(3));
+            const source4 = interval(3000).pipe(take(3));
+
+            source3
+            .pipe(
+              merge(source4)
+            )
+            .subscribe(x => console.log(x))
+            
+            /*
+            0
+            1 
+            0
+            2
+            1 
+            2
+            */
+          </code></pre>
+          </p>
+        </section>
+
+        <section>
+          <p class="color-orange">
+            concat
+          </p>
+        </section>
+        <section>
+          <p>
+            <pre><code class="ts">
+            import { concat } from 'rxjs/operators'
+
+            source3
+            .pipe(
+              concat(source4)
+            )
+            .subscribe(x => console.log(x))
+
+            /*
+            0
+            1
+            2
+            0
+            1
+            2
+            */
+            </code></pre>
+          </p>
+        </section>
+        <section>
+          <h3>Note</h3>
+        </section>
+        <section>
+          <p>
+            <strong class="color-orange">The stream breaks when an error happened</strong> i.e
+            <u>the stream stops to emit a new value and the completion function will never been called</u>.
+          </p>
+        </section>
+        <section>
+          <p>
+            <strong class="color-orange">Remember to unsubscribe when you do not want to listen to the stream anymore</strong>, to avoid memory leaks.</p>
+          <p>
+        </section>
+        <section>
+          <p>By default
+            <strong class="color-orange"> a new stream is created on each subscription</strong>
+            <small>(Observable are
+              <strong>Cold</strong> by default)</small>
+          </p>
+        </section>
+        <section>
+          <h2>Usefull Links</h2>
+        </section>
+        <section>
+
+          <p>
+            <strong class="color-orange">Learning Observable By Building Observable</strong>
+            <br/>
+            <small>https://medium.com/@benlesh/learning-observable-by-building-observable-d5da57405d87</small>
+          </p>
+          <p>
+            <strong class="color-orange">Hot vs Cold Observables</strong>
+            <br/>
+            <small>https://medium.com/@benlesh/hot-vs-cold-observables-f8094ed53339</small>
+            <br/>
+            <small>https://alligator.io/rxjs/hot-cold-observables/</small>
+          </p>
+          <p>
+            <strong class="color-orange">RxJS Doc</strong>
+            <br/>
+            <small>https://rxjs-dev.firebaseapp.com/</small>
+          </p>
+
         </section>
     </div>
   </div>
