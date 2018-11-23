@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <title>reveal.js</title>
+  <title>Angular Training</title>
 
   <link rel="stylesheet" href="css/reveal.css">
   <!-- <link rel="stylesheet" href="css/theme/black.css"> -->
@@ -101,14 +101,14 @@
           <p class="color-orange">Simple directive</p>
           <p>
             <pre><code class="ts">
-                import { Renderer2, Directive } from '@angular/core';
+                import { Renderer2, Directive, ElementRef } from '@angular/core';
                 @Directive({
                   selector: "[red]"
                 })
-                class RedDirective {
+                export class RedDirective {
                   constructor(private el: ElementRef, private renderer: Renderer2) {
-                    // el.nativeElement.style.backgroundColor = "red";
-                    renderer.setElementStyle(el.nativeElement, 'backgroundColor', 'red');
+                    // this.el.nativeElement.style.backgroundColor = "red";
+                    this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', 'red');
                   }
                 }
               </code></pre>
@@ -133,12 +133,12 @@
               @Directive({
                 selector: "[tcolor]"
               })
-              class TextColorDirective, implements OnInit {
+              export class TextColorDirective implements OnChanges {
                 @Input() color: string;
                 constructor(private el: ElementRef, private renderer: Renderer2) { }
-                ngOnInit() {
-                  // el.nativeElement.style.backgroundColor = this.color;
-                  renderer.setElementStyle(el.nativeElement, 'backgroundColor', this.color);
+                ngOnChanges() {
+                  // this.el.nativeElement.style.backgroundColor = this.color;
+                  this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', this.color);
                 }
               }
               </code></pre>
@@ -153,17 +153,17 @@
           <p class="color-orange">Configurable directive (Eg2)</p>
           <p>
             <pre><code class="ts">
-                import { Directive, OnInit, Renderer2 } from '@angular/core';
+                import { Directive, OnChanges, Renderer2 } from '@angular/core';
 
                 @Directive({
                   selector: "[tcolor]"
                 })
-                class TextColorDirective, implements OnInit {
+                export class TextColorDirective implements OnChanges {
                   @Input() tcolor: string;
                   constructor(private el: ElementRef, private renderer: Renderer2) { }
-                  ngOnInit() {
-                    // el.nativeElement.style.backgroundColor = this.color;
-                    renderer.setElementStyle(el.nativeElement, 'backgroundColor', this.color);
+                  ngOnChanges() {
+                    // this.el.nativeElement.style.backgroundColor = this.color;
+                    this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', this.color);
                   }
                 }
                 </code></pre>
@@ -188,13 +188,13 @@
               @Directive({
                 selector: "[thoverColor]"
               })
-              class TextHoverColorDirective {
+              export class TextHoverColorDirective {
                 @Input() thoverColor: string;
                 constructor(private el: ElementRef, private renderer: Renderer2) { }
               
                 @HostListener('mouseover', ['$event'])
                 setTextColorOnHover(event: any) {
-                  renderer.setElementStyle(el.nativeElement, 'backgroundColor', this.color);
+                  this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', this.color);
                 }
               }
               </code></pre>

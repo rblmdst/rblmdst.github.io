@@ -1,0 +1,234 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Angular Training</title>
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <!-- <link rel="stylesheet" href="css/theme/black.css"> -->
+  <link rel="stylesheet" href="css/theme/white.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <!--  custom css -->
+  <link rel="stylesheet" href="css/custom.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <!--
+        ff7200
+        #662d91
+      -->
+      <!--  <section data-background-opacity="0.1" data-background-image="assets/code.png"> -->
+      <section>
+        <!-- <div>
+          <img class="no-border" src="assets/angular.png" alt="angular">
+        </div> -->
+
+        <div>
+          <img class="no-border" src="assets/gebeya-brand.png" alt="logo">
+        </div>
+        <h1 style="color: #662d91">Angular Training</h1>
+
+        <h4>Pipes</h4>
+      </section>
+    </div>
+
+    <!-- TRAINING PURPOSE -->
+    <div class="slides">
+      <section>
+        <section>
+          <h1>Purpose</h1>
+          <p>
+            <ul>Learn how to :
+              <li>Use built-in pipes.</li>
+              <li>Create a custom pipe.</li>
+            </ul>
+          </p>
+        </section>
+      </section>
+    </div>
+
+    <!--  -->
+    <div class="slides">
+      <section>
+        <section>
+          <h1>Pipes</h1>
+        </section>
+        <section>
+          <p>
+            <strong class="color-orange">Pipes</strong> are a way provided by Angular to
+            <strong>filter data</strong>.
+          </p>
+          <p>A pipe takes
+            <strong>data as input</strong> and
+            <strong>transforms</strong> it
+            <strong>to the desired output</strong>.</p>
+        </section>
+      </section>
+    </div>
+    <div class="slides">
+      <section>
+        <section>
+          <h1>Using Pipes</h1>
+        </section>
+        <section>
+          <p class="color-orange">Without parameters</p>
+          <p>Syntax :</p>
+          <p>
+            <pre><code class="html">
+              value | pipeName
+              &lt;!-- or --&gt;
+              value | pipeName
+              </code></pre>
+          </p>
+          <p>Eg :</p>
+          <p>
+            <pre><code class="ts">
+            import {Component} from '@angular/core';
+            @Component({
+              selector: 'product-price',
+              template: `<p>Total price of product is {{ price | currency }}</p>`
+            })
+            export class ProductPrice {
+              price: number = 100.1234;
+            }
+            </code></pre>
+          </p>
+        </section>
+        <section>
+          <p class="color-orange">Passing parameters</p>
+          <p>A pipe can accept optional parameters to modify the output.</p>
+          <p>Syntax</p>
+          <p>
+            <pre><code class="html">
+              value | pipeName: param
+              &lt;!-- or --&gt;
+              value | pipeName: param1: param2
+              </code></pre>
+          </p>
+          <p>Eg</p>
+          <p>
+            <pre><code class="ts">
+            import {Component} from '@angular/core';
+            @Component({
+              selector: 'product-price',
+              template: '<p>Total price of product is {{ price | currency: "CAD": true: "1.2-4" }}</p>'
+            })
+            export class ProductPrice {
+              price: number = 100.123456;
+            }
+            </code></pre>
+          </p>
+        </section>
+        <section>
+          <p class="color-orange">Chaining pipes</p>
+          <p>Syntax</p>
+          <p>
+            <pre><code class="html">
+              value | pipe1Name: paramX | pipe2Name: paramY
+            </code></pre>
+          </p>
+          <p>Eg</p>
+          <p>
+            <pre><code class="ts">
+              import {Component} from '@angular/core';
+              @Component({
+                selector: 'product-price',
+                template: '<p>Total price of product is {{ price | currency: "CAD": true: "1.2-4" | lowercase }}</p>'
+              })
+              export class ProductPrice {
+                price: number = 100.123456;
+              }
+            </code></pre>
+          </p>
+        </section>
+
+      </section>
+    </div>
+
+    <div class="slides">
+      <section>
+        <section>
+          <h1>Custom Pipes</h1>
+        </section>
+        <section>
+          <p>A pipe is just a class decorated with the
+            <strong class="color-orange">@Pipe</strong> decorator and which
+            <strong>implements the PipeTransform interface's transform method</strong>. </p>
+          <p>
+        </section>
+        <section>
+          <p>Creation</p>
+          <p>
+            <pre><code class="ts">
+            import {Pipe, PipeTransform} from '@angular/core';
+            @Pipe({
+                name: 'length'
+            })
+            export class LengthPipe implements PipeTransform {
+              transform(value: string, displayMessage: boolean): string {
+                return displayMessage ? `${value} ${value.length}` : `${value.length}`
+              }
+            }
+            </code></pre>
+          </p>
+          <p>Each colon-delimited parameter in the template maps to one method argument in the same order.</p>
+        </section>
+        <section>
+          <p>Usage</p>
+          <p>
+            <pre><code class="ts">
+              import {Component} from '@angular/core';
+              @Component({
+                selector: 'hello',
+                template: `
+                  <div>
+                    <p>{{ message | length : true }}</p>
+                    <p>{{ message | length : false }}</p>
+                  </div>`
+              })
+              export class Hello {
+                message: string = 'Hello There';
+              }
+              </code></pre>
+          </p>
+        </section>
+      </section>
+    </div>
+  </div>
+
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
+
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+      dependencies: [
+        { src: 'plugin/markdown/marked.js' },
+        { src: 'plugin/markdown/markdown.js' },
+        { src: 'plugin/notes/notes.js', async: true },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+      ]
+    });
+  </script>
+</body>
+
+</html>
