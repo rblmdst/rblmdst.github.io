@@ -1,0 +1,493 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Angular Training</title>
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <!-- <link rel="stylesheet" href="css/theme/black.css"> -->
+  <link rel="stylesheet" href="css/theme/white.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <!--  custom css -->
+  <link rel="stylesheet" href="css/custom.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <!--
+        ff7200
+        #2b7cd0
+      -->
+      <!--  <section data-background-opacity="0.1" data-background-image="assets/code.png"> -->
+      <section>
+        <!-- <div>
+          <img class="no-border" src="assets/angular.png" alt="angular">
+        </div> -->
+        <h1 style="color: #2b7cd0">Angular Training</h1>
+
+        <h4>Forms : Reactive Forms</h4>
+      </section>
+    </div>
+
+    <!-- TRAINING PURPOSE -->
+    <div class="slides">
+      <section>
+        <section>
+          <h1>Purpose</h1>
+          <p>
+            Learn how to manipulate a form using the ReactiveFormsModule.
+          </p>
+        </section>
+      </section>
+    </div>
+
+    <!--  -->
+    <div class="slides">
+      <section>
+        <section>
+          <h1>Forms in Angular</h1>
+        </section>
+        <section>
+          <p>Angular provides two methods for working with forms :</p>
+          <ul>
+            <li>
+              <strong class="color-orange">Template-driven form</strong> (method used by AngularJS),</li>
+            <li>
+              <strong class="color-orange">Reactive form</strong>.</li>
+          </ul>
+          <p>
+            <small> The content here is essentially about reactive forms.</small>
+          </p>
+        </section>
+        <section>
+          <p>To learn about
+            <strong>template driven forms</strong>, you can read the following article :
+            <br/>
+            <span class="color-orange">https://toddmotto.com/angular-2-forms-template-driven</span>
+          </p>
+        </section>
+      </section>
+    </div>
+    <div class="slides">
+      <section>
+        <section>
+          <h1>Reactive Forms</h1>
+        </section>
+        <section>
+          <p class="color-orange">Things we’ll implement :</p>
+          <p>
+            <ul>
+              <li>Create a basic form</li>
+              <li>Bind to the user’s name, email inputs</li>
+              <li>Required validation on all inputs</li>
+              <li>Show required validation errors</li>
+              <li>Disabling submit until valid</li>
+              <li>Submit function</li>
+            </ul>
+          </p>
+        </section>
+        <section>
+          <p class="color-orange">Basic Form</p>
+          <p>
+            <pre><code class="html">
+              <form novalidate>
+                <label>
+                  <span>Full name</span>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your full name">
+                </label>
+                <label>
+                  <span>Email address</span>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Your email address">
+                </label>
+                <button type="submit">Sign up</button>
+              </form>
+            </code></pre>
+          </p>
+        </section>
+        <section>
+          <p class="color-orange">Create an interface that represent the form data</p>
+          <p>
+            <pre><code class="ts">
+                export interface User {
+                  name: string;
+                  email: string;
+                }
+              </code></pre>
+          </p>
+        </section>
+        <section>
+          <p class="color-orange">Tell angular that we are using reactive form</p>
+          <p>
+            <pre><code class="ts">
+            import { ReactiveFormsModule } from '@angular/forms';
+
+            @NgModule({
+              imports: [
+                ...,
+                ReactiveFormsModule
+              ],
+              declarations: [...],
+              bootstrap: [...]
+            })
+            export class AppModule {}
+            </code></pre>
+          </p>
+        </section>
+
+        <section>
+          <p class="color-orange">Create a component that represents our form</p>
+          <p>
+            <pre><code class="ts">
+              // signup-form.component.ts
+              import { Component } from '@angular/core';
+
+              @Component({
+                selector: 'signup-form',
+                template: `
+                  <form novalidate>...</form>
+                `
+              })
+              export class SignupFormComponent {
+                constructor() {}
+              }
+              </code></pre>
+          </p>
+        </section>
+
+        <section>
+          <p class="color-orange">FormControl and FormGroup</p>
+        </section>
+        <section>
+          <p>
+            <strong class="color-orange">FormControl</strong> : is a class that powers an individual form control, tracks the value and validation status.</p>
+          <p>
+            <pre><code class="ts">
+              ngOnInit() {
+                this.myControl = new FormControl('Todd Motto');
+              }
+              </code></pre>
+          </p>
+        </section>
+        <section>
+          <p>
+            <strong class="color-orange">FormGroup</strong> : is a group of FormControl instances, also keeps track of the value and validation status
+            for the said group
+          </p>
+          <p>
+            <pre><code class="ts">
+              ngOnInit() {
+                this.myGroup = new FormGroup({
+                  name: new FormControl('Todd Motto'),
+                  location: new FormControl('England, UK')
+                });
+              }
+            </code></pre>
+          </p>
+        </section>
+        <section>
+          <p>
+            <pre><code class="html">
+              <form novalidate [formGroup]="myGroup">
+                Name: <input type="text" formControlName="name">
+                Location: <input type="text" formControlName="location">
+              </form>
+              </code></pre>
+          </p>
+        </section>
+
+        <section>
+          <h2>Back to our test project</h2>
+        </section>
+        <section>
+          <p>
+            <pre><code class="ts">
+            import { Component, OnInit } from '@angular/core';
+            import { FormControl, FormGroup } from '@angular/forms';
+            
+            @Component({...})
+            export class SignupFormComponent implements OnInit {
+              user: FormGroup;
+              ngOnInit() {
+                this.user = new FormGroup({
+                  name: new FormControl(''),
+                  email: new FormControl(''),
+                });
+              }
+            }
+            </code></pre>
+          </p>
+        </section>
+        <section>
+          <p>
+            <pre><code class="html">
+              <form novalidate [formGroup]="user">
+                <label>
+                  <span>Full name</span>
+                  <input
+                    type="text"
+                    placeholder="Your full name"
+                    formControlName="name">
+                </label>
+                <label>
+                  <span>Email address</span>
+                  <input
+                    type="email"
+                    placeholder="Your email address"
+                    formControlName="email">
+                </label>
+              
+                <button type="submit">Sign up</button>
+              </form>
+            </code></pre>
+          </p>
+        </section>
+
+        <section>
+          <p class="color-orange">Submit the form</p>
+          <p>
+            <pre><code class="html">
+              <form novalidate (ngSubmit)="onSubmit()" [formGroup]="user">
+                ...
+              </form>
+              </code></pre>
+          </p>
+          <p>
+            <pre><code class="ts">
+              export class SignupFormComponent {
+                user: FormGroup;
+                onSubmit() {
+                  console.log(this.user.value, this.user.valid);
+                }
+              }
+            </code></pre>
+          </p>
+        </section>
+
+        <section>
+          <p class="color-orange">Add validation</p>
+          <p>Angular provides many validators out of the box.</p>
+          <p>To add validation, we need to import Validators from @angular/forms and pass the appropriate validator as a second
+            argument to our FormControl.</p>
+        </section>
+        <section>
+          <p class="color-orange">Add validation</p>
+          <p>
+            <pre><code class="ts">
+              import { Validators } from '@angular/forms'
+              ngOnInit() {
+                this.user = new FormGroup({
+                  name: new FormControl('', [Validators.required, Validators.minLength(2)]),
+                  email: new FormControl('', Validators.required)
+                });
+              }
+              </code></pre>
+          </p>
+        </section>
+        <section>
+          <p class="color-orange">Disable the submit button when the form is not valid</p>
+          <p>
+            <pre><code class="html">
+            <form novalidate (ngSubmit)="onSubmit(user)" [formGroup]="user">
+              ...
+              <button type="submit" [disabled]="user.invalid">Sign up</button>
+            </form>
+            </code></pre>
+          </p>
+        </section>
+        <section>
+          <p class="color-orange">Access a specific field</p>
+          <p>
+            <pre><code class="ts">
+            this.user.controls.name // get the form control
+
+            /* or */
+
+            this.user.get('name') // get the form control by using the get() method
+            </code></pre>
+          </p>
+          <p>
+            <pre><code class="ts">
+            this.user.controls.name.errors // get the form control errors (an object)
+            this.user.controls.name.valid // true if the form control is valid
+            this.user.controls.name.value // get the current value of the form control
+            </code></pre>
+          </p>
+        </section>
+        <section>
+          <p class="color-orange">Display validation errors</p>
+          <p>
+            <pre><code class="html">
+              <!-- name -->
+              <div
+              class="error"
+              *ngIf="user.get('name').hasError('required') && user.get('name').touched">
+                Name is required
+              </div>
+              <div
+              class="error"
+              *ngIf="user.get('name').hasError('minlength') && user.get('name').touched">
+                Minimum of 2 characters
+              </div>
+
+              <!-- account -->
+              <div
+              class="error"
+              *ngIf="user.get('email').hasError('required') && user.get('account').get('email').touched">
+                Email is required
+              </div>
+            </code></pre>
+          </p>
+          <p>
+            <strong>
+              <u>Note</u>
+            </strong> : The
+            <span class="color-orange">touched</span> property becomes true once the user has blurred the input.
+          </p>
+        </section>
+
+        <section>
+          <p class="color-orange">Code so far</p>
+            <p>
+              <pre><code class="ts">
+              import { Component, OnInit } from '@angular/core';
+              import { FormControl, FormGroup, Validators } from '@angular/forms';
+              import { User } from './signup.interface';
+
+              @Component({
+                selector: 'signup-form',
+                template: `
+                  <form novalidate (ngSubmit)="onSubmit()" [formGroup]="user">
+                    <label>
+                      <span>Full name</span>
+                      <input type="text" placeholder="Your full name" formControlName="name">
+                    </label>
+                    <div class="error" *ngIf="user.get('name').hasError('required') && user.get('name').touched">
+                      Name is required
+                    </div>
+                    <div class="error" *ngIf="user.get('name').hasError('minlength') && user.get('name').touched">
+                      Minimum of 2 characters
+                    </div>
+                    <label>
+                      <span>Email address</span>
+                      <input type="email" placeholder="Your email address" formControlName="email">
+                    </label>
+                    <div
+                      class="error"
+                      *ngIf="user.get('account').get('email').hasError('required') && user.get('account').get('email').touched">
+                      Email is required
+                    </div>
+                    <button type="submit" [disabled]="user.invalid">Sign up</button>
+                  </form>
+                `
+              })
+              export class SignupFormComponent implements OnInit {
+                user: FormGroup;
+                constructor() {}
+                ngOnInit() {
+                  this.user = new FormGroup({
+                    name: new FormControl('', [Validators.required, Validators.minLength(2)]),
+                    email: new FormControl('', Validators.required)
+                  });
+                }
+                onSubmit({ value, valid }: { value: User, valid: boolean }) {
+                  console.log(value, valid);
+                }
+              }
+
+            </code></pre>
+            </p>
+         
+        </section>
+
+        <section>
+          <p class="color-orange">Simplifying with FormBuilder</p>
+          <p>
+            <pre><code class="ts">
+            import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+            export class SignupFormComponent implements OnInit {
+              user: FormGroup;
+              constructor(private fb: FormBuilder) {}
+              ...
+            }
+            </code></pre>
+          </p>
+        </section>
+        <section>
+          <p class="color-orange">Simplifying with FormBuilder</p>
+          <p>
+            <pre><code class="ts">
+              // without FormBuilder
+              ngOnInit() {
+                this.user = new FormGroup({
+                  name: new FormControl('', [Validators.required, Validators.minLength(2)]),
+                  email: new FormControl('', Validators.required)
+                });
+              }
+
+              // with FormBuilder
+              ngOnInit() {
+                this.user = this.fb.group({
+                  name: ['', [Validators.required, Validators.minLength(2)]],
+                  email: ['', Validators.required]
+                });
+              }
+              </code></pre>
+          </p>
+        </section>
+        <section>
+          <p>
+            The content found here is based essentially on the post
+            <br/> "
+            <strong class="color-orange">Angular 2 form fundamentals: reactive forms</strong> " of
+            <strong>Todd Motto</strong>
+            <br/>
+            <small>https://toddmotto.com/angular-2-forms-reactive</small>
+          </p>
+        </section>
+      </section>
+    </div>
+
+  </div>
+
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
+
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+      dependencies: [
+        { src: 'plugin/markdown/marked.js' },
+        { src: 'plugin/markdown/markdown.js' },
+        { src: 'plugin/notes/notes.js', async: true },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+      ]
+    });
+  </script>
+</body>
+
+</html>

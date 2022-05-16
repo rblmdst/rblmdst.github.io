@@ -1,0 +1,262 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Angular Training</title>
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <!-- <link rel="stylesheet" href="css/theme/black.css"> -->
+  <link rel="stylesheet" href="css/theme/white.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <!--  custom css -->
+  <link rel="stylesheet" href="css/custom.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <!--
+        ff7200
+        #2b7cd0
+      -->
+      <!--  <section data-background-opacity="0.1" data-background-image="assets/code.png"> -->
+      <section>
+        <!-- <div>
+          <img class="no-border" src="assets/angular.png" alt="angular">
+        </div> -->
+
+        <h1 style="color: #2b7cd0">Angular Training</h1>
+
+        <h4>Bootstrapping Angular Application</h4>
+      </section>
+    </div>
+
+    <!-- TRAINING PURPOSE -->
+    <div class="slides">
+      <section>
+        <section>
+          <h1>Purpose</h1>
+          <p>Explain the bootstrap process of an Angular Application.</p>
+        </section>
+      </section>
+    </div>
+
+    <!-- Angular Basic Building Blocks -->
+    <div class="slides">
+      <section>
+        <section>
+          <h1>Angular Basic Building Blocks</h1>
+        </section>
+        <section>
+          <p>
+            The basic building blocks of an Angular application are
+            <strong>modules</strong>.</p>
+        </section>
+        <section>
+          <p>
+            <strong class="color-orange">Module</strong> = mechanism to group
+            <strong class="color-orange">components</strong>,
+            <strong class="color-orange">directives</strong>,
+            <strong class="color-orange">pipes</strong> and
+            <strong class="color-orange">services</strong> that are related.
+          </p>
+          <p>
+            <strong class="color-orange">Module</strong> are combined with other modules to create an application.
+          </p>
+        </section>
+      </section>
+    </div>
+    <div class="slides">
+      <section>
+        <section>
+          <h1>Bootstrapping</h1>
+        </section>
+        <section>
+          <p>
+            <strong class="color-orange">Bootstrapping</strong> is the process an angular application takes to come to life.</p>
+        </section>
+        <section>
+          <p>
+            <strong>The application launches by bootstrapping the root module.</strong>
+          </p>
+
+          <p>(By convention, the root module is usually called
+            <strong class="color-orange">AppModule</strong>.)</p>
+          <p> The root module then create the component(s) listed in the bootstrap array and inserts each one into the browser
+            DOM.
+          </p>
+        </section>
+        <section>
+          <p>
+            Root Module
+          </p>
+          <p>
+            <pre><code class="ts">
+            import { BrowserModule } from '@angular/platform-browser';
+            import { NgModule } from '@angular/core';
+            import { AppComponent } from './app.component';
+
+            /* the AppModule class with the @NgModule decorator */
+            @NgModule({
+              declarations: [AppComponent],
+              imports: [BrowserModule],
+              providers: [],
+              bootstrap: [AppComponent]
+            })
+            export class AppModule { }
+            </code></pre>
+          </p>
+        </section>
+        <section>
+          <p>
+            Root Component
+          </p>
+          <p>
+            <pre><code class="ts">
+                import { Component } from '@angular/core';
+                
+                @Component({
+                  selector: 'app-root',
+                  template: `<h1> Welcome to {{ title }}!</h1>`,
+                  styles: [`
+                    h1 {
+                      text-align: center;
+                    }
+                  `]
+                })
+                export class AppComponent {
+                  title = 'app';
+                }
+                </code></pre>
+          </p>
+        </section>
+        <section>
+          <p>
+            The app bootstrapping code </p>
+          <p>
+            <pre><code class="ts">
+              import { enableProdMode } from '@angular/core';
+              import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+              
+              import { AppModule } from './app/app.module';
+              import { environment } from './environments/environment';
+              
+              if (environment.production) {
+                enableProdMode();
+              }
+              
+              platformBrowserDynamic().bootstrapModule(AppModule)
+                .catch(err => console.log(err));
+              </code></pre>
+          </p>
+        </section>
+      </section>
+      </section>
+    </div>
+
+    <div class="slides">
+      <section>
+        <section>
+          <h1>NgModule</h1>
+        </section>
+        <section>
+          <p>The basic NgModule</p>
+          <p>
+            <pre><code class="ts">
+            ...
+            // @NgModule decorator with its metadata
+            @NgModule({
+              declarations: [AppComponent, ItemDirective],
+              imports: [BrowserModule, FormsModule, HttpClientModule],
+              providers: [],
+              bootstrap: [AppComponent]
+            })
+            export class AppModule { }
+              </code></pre>
+          </p>
+          <small>
+            <ul>
+              <li>
+                <strong>declarations</strong>: registers components within this module;</li>
+              <li>
+                <strong>bootstrap</strong>: tells the module which component to bootstrap when bootstrapping the module;</li>
+              <li>
+                <strong>imports</strong>: list of components to import (from other modules) into this module;</li>
+              <li>
+                <strong>providers</strong>: list of services to inject in the module.</li>
+            </ul>
+          </small>
+        </section>
+      </section>
+    </div>
+
+
+
+    <!-- <div class="slides">
+      <section>
+        <section>Closure</section>
+        <section></section>
+      </section>
+    </div>
+
+    <div class="slides">
+      <section>
+        <section></section>
+        <section></section>
+      </section>
+    </div>
+
+    <div class="slides">
+      <section>
+        <section></section>
+        <section></section>
+      </section>
+    </div>
+
+    <div class="slides">
+      <section>
+        <section>Slide 1</section>
+        <section>Slide 2</section>
+      </section>
+    </div>
+ -->
+    <!--  <div class="slides">
+      <section>Slide 1</section>
+      <section>Slide 2</section>
+    </div> -->
+  </div>
+
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
+
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+      dependencies: [
+        { src: 'plugin/markdown/marked.js' },
+        { src: 'plugin/markdown/markdown.js' },
+        { src: 'plugin/notes/notes.js', async: true },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+      ]
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+.reveal section img.no-border {
+  border: 0;
+  box-shadow: unset;
+}
+
+.reveal img.profile-round-image {
+  max-width: 175px;
+  width: 175px;
+  border-radius: 50%;
+}
+
+.reveal .side-by-side {
+  display: flex;
+  justify-content: space-around;
+}
+
+.reveal .slides section > section > h1 {
+  /* color: #2b7cd0; */
+  color: #2b7cd0;
+}
+
+.reveal .slides section > section h2:not(.no-color),
+.reveal .slides section > section h3:not(.no-color) {
+  /* color: #ff7200; */
+  color: #ff5c84;
+}
+
+.color-orange {
+  /* color: #ff7200; */
+  color: #ff5c84;
+}
+.color-purple {
+  color: #2b7cd0;
+}
+.align-left,
+div.align-left > p {
+  text-align: left;
+  text-indent: 40px;
+}
