@@ -1,0 +1,453 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Angular Training</title>
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <!-- <link rel="stylesheet" href="css/theme/black.css"> -->
+  <link rel="stylesheet" href="css/theme/white.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <!--  custom css -->
+  <link rel="stylesheet" href="css/custom.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <!--
+        ff7200
+        #2b7cd0
+      -->
+      <!--  <section data-background-opacity="0.1" data-background-image="assets/code.png"> -->
+      <section>
+        <!-- <div>
+          <img class="no-border" src="assets/angular.png" alt="angular">
+        </div> -->
+        <h1 style="color: #2b7cd0">Angular Training</h1>
+
+        <h4>ES6 / ES2015</h4>
+      </section>
+    </div>
+
+    <!-- TRAINING PURPOSE -->
+    <div class="slides">
+      <section>
+        <section>
+          <h1>Purpose</h1>
+          <p>Learn new Javascript features introduced by
+            <strong>ES6</strong>.</p>
+        </section>
+      </section>
+    </div>
+
+    <!-- LET -->
+    <div class="slides">
+      <section>
+        <section>
+          <h1>LET</h1>
+        </section>
+        <section>
+          <h3>LET</h3>
+
+          <p>let is similar to var but it is only accessible in the block level it is defined.</p>
+          <p>
+            <pre><code class="js">
+              if (true) {
+                let a = 40;
+                console.log(a); //40
+              }
+              console.log(a); // undefined
+              </code></pre>
+          </p>
+        </section>
+
+      </section>
+    </div>
+    <!-- CONST -->
+    <div class="slides">
+      <section>
+        <section>
+          <h1>CONST</h1>
+        </section>
+        <section>
+          <h3>CONST</h3>
+
+          <p>const is used to assign a constant value to the variable.</p>
+          <p>
+            <pre><code class="js">
+                const a = 50;
+                a = 60; // shows error. You cannot change the value of const.
+  
+                const b = "Constant variable";
+                b = "Assigning new value"; // shows error.
+              </code></pre>
+          </p>
+        </section>
+        <section>
+          <h3>CONST</h3>
+          <p>You cannot change the variable to reference some other memory location later.</p>
+          <p>
+            <pre><code class="js">
+            const LANGUAGES = ['Js', 'Ruby', 'Python', 'Go'];
+
+            LANGUAGES = "Javascript"; // shows error. 
+            
+            LANGUAGES.push('Java'); // Works fine.
+            console.log(LANGUAGES); // ['Js', 'Ruby', 'Python', 'Go', 'Java']
+            </code></pre>
+          </p>
+        </section>
+
+      </section>
+    </div>
+
+    <!-- TEMPLATE STRING -->
+    <div class="slides">
+      <section>
+        <section>
+          <h1>Template Strings</h1>
+        </section>
+        <section>
+          <h3>Template Strings</h3>
+          <p>
+            <pre><code class="js">
+              // before
+              var name = 'Sam';
+              var age = 42;
+              console.log('hello my name is ' + name + ' I am ' + age + ' years	old');
+
+              // with template strings
+              var name = 'Sam';
+              var age = 42;
+              console.log(`hello my name is ${name}, and I am ${age} years old`);
+            </code></pre>
+          </p>
+        </section>
+      </section>
+    </div>
+
+    <!-- ARROW FUNCTIONS -->
+    <div class="slides">
+      <section>
+        <section>
+          <h1>Arrow functions</h1>
+        </section>
+        <section>
+          <h3>Arrow functions</h3>
+          <p>
+            <pre><code class="js">
+              // before es6
+              function sum(a, b) {
+                return a + b;
+              }
+              // with arrow functions
+              var sum = (a, b) => {
+                return a + b;
+              }
+
+              or
+
+              var sum = (a, b) =>  a + b;
+                </code></pre>
+          </p>
+        </section>
+
+      </section>
+    </div>
+    <!-- DEFAULT PARAMETER -->
+    <div class="slides">
+      <section>
+        <section>
+          <h1>DEFAULT PARAMETER</h1>
+        </section>
+        <section>
+          <h3>DEFAULT PARAMETER</h3>
+          <p>
+            <pre><code class="js">
+            let func = (a, b = 10) => {
+              return a + b;
+            }
+            func(20); // 20 + 10 = 30
+
+            func(20, 50); // 20 + 50 = 70
+            </code></pre>
+          </p>
+        </section>
+
+      </section>
+    </div>
+    <!-- FOR OF -->
+    <div class="slides">
+      <section>
+        <section>
+          <h1>FOR..OF</h1>
+        </section>
+        <section>
+          <h3>FOR..OF</h3>
+          <p>
+            <pre><code class="js">
+              let arr = [2, 3, 4, 1];
+              for (let value of arr) {
+                console.log(value);
+              }
+  
+              // Output:
+              2
+              3
+              4
+              1
+              </code></pre>
+          </p>
+        </section>
+        <section>
+          <h3>FOR..OF</h3>
+          <p>
+            <pre><code class="js">
+            let string = "ES6";
+            for (let char of string) {
+              console.log(char);
+            }
+            
+            // Output:
+            E
+            S
+            6
+          </code></pre>
+          </p>
+        </section>
+
+      </section>
+    </div>
+    <!-- REST AND SPREAD OPERATORS -->
+    <div class="slides">
+      <section>
+        <section>
+          <h1>REST AND SPREAD OPERATORS</h1>
+        </section>
+        <section>
+          <h3>REST AND SPREAD OPERATORS</h3>
+          <p>
+            <pre><code class="js">
+                // function accept three params
+                const sum = (a, b, c) {
+                  return a + b + c;
+                }
+                sum(1, 4, 5); // 10
+  
+                const vals = [1, 4, 5];
+                // sum(...vals)  &lt;=>  sum(vals[0], vals[1], vals[2])
+                sum(...vals); // 10
+
+                // sum(10, ...vals)  &lt;=>  sum(10, vals[0], vals[1])
+                sum(10, ...vals); // 15
+              </code></pre>
+          </p>
+        </section>
+        <section>
+          <h3>REST AND SPREAD OPERATORS</h3>
+          <p>
+            <pre><code class="js">
+                Math.max(10, 20, 60, 100, 50, 200); // returns 200
+
+                let arr = [10, 20, 60];
+                Math.max(arr); // Shows error. Doesn't accept an array
+                Math.max(...arr); // 60
+                </code></pre>
+          </p>
+        </section>
+
+      </section>
+    </div>
+
+    <!-- DESTRUCTURING  -->
+    <div class="slides">
+      <section>
+        <section>
+          <h1>DESTRUCTURING</h1>
+        </section>
+        <section>
+          <h3>Destructuring</h3>
+          <p>Destructuring is a way to quickly extract data out of an object or array with less code.</p>
+        </section>
+        <section>
+          <h3>Array Destructuring</h3>
+          <p>
+            <pre><code class="js">
+              // before
+              const foo	= ['one', 'two', 'three'];
+              const one = foo[0];
+              const two = foo[1];
+              const three = foo[2];
+
+              // with destructuring
+              const foo = ['one', 'two', 'three'];
+              const [one, two, three] = foo;
+              console.log(one); // 'one'
+              </code></pre>
+          </p>
+        </section>
+        <section>
+          <h3>Object Destructuring</h3>
+          <p>
+            <pre><code class="js">
+                // before
+                let user = {username: 'John', age: 10, sex: 'M'};
+                let username = user.username;
+                let age = user.age;
+
+                // with Destructuring
+                const {username, age} = user;
+                console.log(username); // 'John'
+                console.log(age); // 10
+                </code></pre>
+          </p>
+        </section>
+
+      </section>
+    </div>
+    <!-- CLASS -->
+    <div class="slides">
+      <section>
+        <section>
+          <h1>CLASSES</h1>
+        </section>
+        <section>
+          <section>
+            <p>Declaration</p>
+            <p>
+              <pre><code class="js">
+            class Person {
+              /* attributes/properties can be public or private */
+              private _name;
+              constructor(name) {
+                this._name = name;
+              }
+
+              /* methods can also can be public or private */
+              public introducedMe() {
+                console.log(`Hello, I am ${this._name}.`);
+              }
+            }
+              </code></pre>
+            </p>
+          </section>
+
+        </section>
+        <section>
+          <section>
+            <p>Instanciation</p>
+            <p>
+              <pre><code class="js">
+              let person1 = new Person('John Doe'); // create a person
+              person1.introducedMe(); // Hello, I am John Doe.
+              </code></pre>
+            </p>
+          </section>
+
+        </section>
+    </div>
+    <!-- MODULES  -->
+    <div class="slides">
+      <section>
+        <section>
+          <h1>MODULES</h1>
+        </section>
+        <section>
+          <p>A module is just a simple Javascript file with
+            <strong>import/export</strong> statements.</p>
+          <p>
+            <pre><code class="js">
+              // math-utils.js
+              export const PI = 3.14;
+              export const square = (x) => x * x;
+
+              // index.js
+              import { square } from './math-utils';
+              console.log(square(4)); // 16
+            </code></pre>
+          </p>
+          <ul>
+            <li>
+              Use
+              <strong>export</strong> to export variables or functions that can be accessible outside of the module.</li>
+
+            <li>
+              Use
+              <strong>import</strong> to import variables or functions from other modules.</li>
+          </ul>
+
+        </section>
+
+      </section>
+    </div>
+
+
+    <!-- <div class="slides">
+      <section>
+        <section>Closure</section>
+        <section></section>
+      </section>
+    </div>
+
+    <div class="slides">
+      <section>
+        <section></section>
+        <section></section>
+      </section>
+    </div>
+
+    <div class="slides">
+      <section>
+        <section></section>
+        <section></section>
+      </section>
+    </div>
+
+    <div class="slides">
+      <section>
+        <section>Slide 1</section>
+        <section>Slide 2</section>
+      </section>
+    </div>
+ -->
+    <!--  <div class="slides">
+      <section>Slide 1</section>
+      <section>Slide 2</section>
+    </div> -->
+  </div>
+
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
+
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+      dependencies: [
+        { src: 'plugin/markdown/marked.js' },
+        { src: 'plugin/markdown/markdown.js' },
+        { src: 'plugin/notes/notes.js', async: true },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+      ]
+    });
+  </script>
+</body>
+
+</html>

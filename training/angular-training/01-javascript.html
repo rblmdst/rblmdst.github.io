@@ -1,0 +1,817 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Angular Training</title>
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <!-- <link rel="stylesheet" href="css/theme/black.css"> -->
+  <link rel="stylesheet" href="css/theme/white.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <!--  custom css -->
+  <link rel="stylesheet" href="css/custom.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <!--
+        ff7200
+        #2b7cd0
+      -->
+      <!--  <section data-background-opacity="0.1" data-background-image="assets/code.png"> -->
+      <section>
+        <!-- <div>
+          <img class="no-border" src="assets/angular.png" alt="angular">
+        </div> -->
+        <h1 style="color: #2b7cd0">Angular Training</h1>
+
+        <h4>JavaScript Fundamentals</h4>
+      </section>
+    </div>
+
+    <!-- TRAINING PURPOSE -->
+    <div class="slides">
+      <section>
+        <section>
+          <h1>Purpose</h1>
+          <p>Learn the minimum required to write a Javascript application.</p>
+        </section>
+      </section>
+    </div>
+    <!-- INTRODUCTION -->
+    <div class="slides">
+      <section>
+        <section>
+          <h1>Introduction</h1>
+        </section>
+        <section>
+          <h3>Brief History</h3>
+        </section>
+        <section>
+          <p>Javascript was originally created to
+            <strong> make web pages dynamic in the browser</strong>.</p>
+          <p>In 2009,
+            <strong>NodeJS</strong> came out and allows to use
+            <strong> Javascript server side</strong>.</p>
+        </section>
+        <section>
+          <h3>Javascript / ECMAScript</h3>
+        </section>
+        <section>
+          <p>
+            <strong>ECMAScript</strong> is a standardized specification of a scripting language.</p>
+
+          <p>
+            <strong>JavaScript</strong> is an implementation of the ECMAScript standard.</p>
+          <p>
+            <strong>JavaScript</strong> =
+            <strong>ECMAScript</strong>
+          </p>
+        </section>
+        <section>
+          <h3>ES6</h3>
+          <p>
+            <strong>ES6</strong> is one major version of Javascript.
+          </p>
+          <p>ES6 = ES2015 = ECMAScript 2015</p>
+        </section>
+        <section>
+          <h3>Javascript Today !!</h3>
+        </section>
+        <section>
+          <p>Today Javascript is present everywhere.</p>
+          <ul>
+            <li>Web apps frontend
+              <small>(Angular, React, VueJS, etc.)</small>
+            </li>
+            <li>Web Services
+              <small>(Express, KOA, Restify, etc.)</small>
+            </li>
+            <li>Mobile apps
+              <small>(NativeScript, ReactNative, etc.)</small>
+            </li>
+            <li>App Bundler, Task runner
+              <small>(Webpack, Grunt, Gulp, etc.)</small>
+            </li>
+            <li>Desktop apps
+              <small>(Electron)</small>
+            </li>
+            <li>IoT
+              <small>(Johnny Five)</small>
+            </li>
+            <li>etc.</li>
+          </ul>
+        </section>
+      </section>
+    </div>
+
+    <!-- TYPES -->
+    <div class="slides">
+      <section>
+        <section>
+          <h1>Types</h1>
+        </section>
+        <section>
+          <p>
+            <strong>Types</strong> : determine the
+            <strong> operations</strong> that we can operate on a variable.</p>
+        </section>
+        <section>
+          <p>
+            2 categories of Type System
+          </p>
+          <p>
+            <strong>Static Type</strong> vs
+            <strong>Dynamic Type</strong>
+          </p>
+        </section>
+        <section>
+          <h3>Static Type</h3>
+          <ul>
+            <li>
+              Variable type is determined at
+              <strong>compile-time</strong>.
+            </li>
+            <li>
+              Variable type can not change during the program execution.
+            </li>
+          </ul>
+          <p>
+            <strong>eg :</strong> C++, Java.
+          </p>
+        </section>
+        <section>
+          <h3>Dynamic Type</h3>
+          <ul>
+            <li>
+              Variable type is determined at
+              <strong>run-time</strong>.
+            </li>
+            <li>
+              Variable type can change during the program execution.
+            </li>
+          </ul>
+          <p>
+            <strong>eg :</strong> Javascript, Python.
+          </p>
+        </section>
+        <section>
+          <p>
+            Javascript is
+            <strong>dynamically typed</strong> language
+          </p>
+          <p>
+            <pre><code class="js">
+              // no error
+              var message = "hello";
+              message = 123456;
+            </code></pre>
+          </p>
+        </section>
+        <section>
+          <p>
+            <strong>Javascript Types</strong>
+          </p>
+          <div class="side-by-side">
+            <ul>
+              <strong>Primitives</strong>
+              <li>Number</li>
+              <li>String</li>
+              <li>Boolean</li>
+              <li>Undefined</li>
+              <li>Null</li>
+              <li>Symbol
+                <small>(ES6)</small>
+              </li>
+            </ul>
+            <ul>
+              <strong>Non-primitive (Reference)</strong>
+              <li>Object
+                <small>(Array, Date, RegExp, etc.)</small>
+              </li>
+            </ul>
+          </div>
+
+        </section>
+        <section>
+          <p>
+            <strong>Number</strong>
+          </p>
+          <p>The number type serves both for
+            <strong>integer</strong> and
+            <strong>floating point numbers</strong>.</p>
+          <p>A number can also be
+            <strong>+Infinity</strong>,
+            <strong>-Infinity</strong> , and
+            <strong>NaN</strong> (not a number).</p>
+          <p>
+            <pre><code class="js">
+              var num1 = 123;
+              var num2 = 12.345;
+              var num3 = +Infinity;
+              var num4 = 1 / 0 ; // Infinity
+              var num5 = "not a number" / 2; // NaN
+              var x = 2 + 8; // 10
+            </code></pre>
+          </p>
+        </section>
+        <section>
+          <p>
+            <strong>String</strong>
+          </p>
+          <p>A string in JavaScript must be quoted.</p>
+          <p>
+            <pre><code class="js">
+                  var str = "Hello"; // Double quotes
+                  var str2 = 'Single quotes are ok too'; // Single quotes
+                  var phrase = `can embed ${str}`; // Backticks
+                  var name = 'John';
+                  var concatened1 = str + name; // 'HelloJohn'
+                  var concatened2 = str + ' ' + name; // 'Hello John'
+
+              </code></pre>
+          </p>
+        </section>
+        <section>
+          <p>
+            <strong>Boolean</strong>
+          </p>
+          <p>A boolean represents only one of two values:</p>
+          <strong>true</strong>, or
+          <strong>false</strong>. </p>
+          <p>
+            <pre><code class="js">
+                  var boo1 = true;
+                  var boo2 = false;
+                  var isGreater = 4 > 1; // true
+                  </code></pre>
+          </p>
+        </section>
+        <section>
+          <p>
+            <strong>Null</strong>
+          </p>
+          <p>It contains only the value
+            <strong>null</strong>.</p>
+          <p>
+            <pre><code class="js">
+                  var age = null;
+              </code></pre>
+          </p>
+        </section>
+        <section>
+          <p>
+            <strong>Undefined</strong>
+          </p>
+          <p>A variable that has no value is undefined.</p>
+          <p>
+            <pre><code class="js">
+                      var testVar;
+                      console.log(testVar); // undefined
+                  </code></pre>
+          </p>
+        </section>
+        <section>
+          <p>
+            <strong>Object</strong>
+          </p>
+          <p>An object is a collection of properties stored in
+            <strong>key/value pairs</strong>.</p>
+          <p>
+            Properties can reference any type of data.
+          </p>
+          <p>
+            <pre><code class="js">
+                var person = {
+                  firstName: "John",
+                  lastName: "Doe",
+                  age: 50,
+                  married: true
+                };
+            </code></pre>
+          </p>
+        </section>
+
+        <section>
+          <p>
+            <strong>How to check the type of a variable ? </strong>
+          </p>
+          <p>
+            <strong>typeof</strong> can be used to check a variable type.</p>
+          <p>
+            <pre><code class="js">
+              typeof undefined; // "undefined"
+              typeof 0; // "number"
+              typeof true; // "boolean"
+              typeof "foo"; // "string"
+              typeof Math; // "object"  (Math is a built-in object)
+              typeof null; // "object"  (That’s wrong. It is an officially recognized error in typeof, kept for compatibility.)
+              typeof alert; // "function"  (alert is a function of the language)
+            </code></pre>
+          </p>
+        </section>
+      </section>
+    </div>
+    <!-- OPERATORS -->
+    <div class="slides">
+      <section>
+        <section>
+          <h1>Operators</h1>
+        </section>
+        <section>
+          <p>Like any programming language, JavaScript provides a complete set of operators.</p>
+          <p>
+            <pre><code class="js">
+              /*  3 and 2 are the operands  `+` represents the operator */
+              3 + 2;
+
+              /*  x is the operand  `++` represents the operator */
+              x++;
+              </code></pre>
+          </p>
+          <!-- var x = 2; //
+                  x++; // ++
+                  var y = 3 * 2;
+                 -->
+
+        </section>
+        <section>
+          <p>
+            <strong> Javascript provides : </strong>
+          </p>
+          <small>
+            <ul>
+              <li>Assignment operators</li>
+              <li>Comparison operators</li>
+              <li>Arithmetic operators</li>
+              <li>Logical operators</li>
+              <li>String operators</li>
+              <li>Conditional (ternary) operator</li>
+              <li>Unary operators</li>
+              <li>etc.</li>
+            </ul>
+          </small>
+          <p>
+            <small>For more details about operators visit :</small>
+          </p>
+          <p>
+            <small>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators</small>
+          </p>
+        </section>
+      </section>
+    </div>
+
+    <!-- CONTROL STRUCTURES-->
+    <div class="slides">
+      <section>
+        <section>
+          <h1>Control Structures</h1>
+        </section>
+        <section>
+          <strong>Conditional Structures</strong> allow to perform different actions based on conditions.
+        </section>
+        <section>
+          <h2>The If Statement</h2>
+        </section>
+        <section>
+          <p>
+            <strong>if...else</strong>
+          </p>
+          <p>
+            <pre><code class="js">
+              if (condition) {
+                instructions1 // executed only when condition is evaluated to true
+              } else {
+                instructions2 // executed only when condition is evaluated to false
+              }
+            </code></pre>
+          </p>
+        </section>
+        <section>
+          <p>
+            <strong>if...else</strong>
+          </p>
+          <p>
+            <pre><code class="js">
+              var x = 15;
+              if (x % 2 === 0) {
+                console.log("x is a multiple of 2");
+              } else {
+                console.log("x is not a multiple of 2");
+              }
+              // Result
+              "x is not a multiple of 2"
+              </code></pre>
+          </p>
+        </section>
+
+        <section>
+          <p>
+            <strong>if..else if..else</strong>
+          </p>
+          <p>
+            <pre><code class="js">
+              if (condition1) {
+                  instructions1 // executed only when condition1 is evaluated to true
+              } else if (condition2) {
+                  instructions2 // executed only when condition2 is evaluated to true
+              } else {
+                  instructions3 // executed only when condition1 nor condition2 is evaluated to true
+              }
+                </code></pre>
+          </p>
+        </section>
+        <section>
+          <p>
+            <strong>if..else if..else</strong>
+          </p>
+          <p>
+            <pre><code class="js">
+              var x = -12
+              if (x > 0) {
+                console.log("x is positive");
+              } else if (x < 0) {
+                console.log("x is negative");
+              } else {
+                console.log("x is equal to zero");
+              }
+              // Result
+              "x is negative"
+                  </code></pre>
+          </p>
+        </section>
+        <section>
+          <h2>Loops</h2>
+        </section>
+        <section>
+          <p>
+            The
+            <strong>For</strong> loop
+          </p>
+          <p>
+            <pre><code class="js">
+              for (initialExpression; condition; incrementExpression) {
+                statement
+              }
+              </code></pre>
+          </p>
+        </section>
+
+        <section>
+          <p>
+            The
+            <strong>For</strong> loop
+          </p>
+          <p>
+            <pre><code class="js">
+              var end = 5;
+              for (var i = 0; i < end; i++) {
+                if (i % 2 === 0) {
+                  console.log(i);
+                }
+              }
+              // Result
+              0
+              2
+              4
+                </code></pre>
+          </p>
+        </section>
+        <section>
+          <p>
+            The
+            <strong>While</strong> loop
+          </p>
+          <p>
+            <pre><code class="js">
+              while (condition) {
+                statement
+              }
+              </code></pre>
+          </p>
+        </section>
+
+        <section>
+          <p>
+            The
+            <strong>While</strong> loop
+          </p>
+          <p>
+            <pre><code class="js">
+              var end = 5;
+              var i = 0;
+              while (i < end) {
+                if (i % 2 === 0) {
+                  console.log(i);
+                }
+                i++
+              }
+              // Result
+              0
+              2
+              4
+                    </code></pre>
+          </p>
+        </section>
+        <section>
+          <h2>The switch statement</h2>
+        </section>
+        <section>
+          <p>
+            The
+            <strong>Switch</strong> statement
+          </p>
+          <p>
+            <pre><code class="js">
+          switch (expression) {
+            case value1:
+              //Statements executed when the result of expression matches value1
+              [break;]
+            case value2:
+              //Statements executed when the result of expression matches value2
+              [break;]
+            ...
+            case valueN:
+              //Statements executed when the result of expression matches valueN
+              [break;]
+            [default:
+              //Statements executed when none of the values match the value of the expression
+              [break;]]
+          }
+          </code></pre>
+          </p>
+        </section>
+        <section>
+          <p>
+            The
+            <strong>Switch</strong> statement
+          </p>
+          <p>
+            <pre><code class="js">
+            var expr = 'Papayas';
+            switch (expr) {
+              case 'Oranges':
+                console.log('Oranges are $0.59 a pound.');
+                break;
+              case 'Mangoes':
+              case 'Papayas':
+                console.log('Mangoes and papayas are $2.79 a pound.');
+                break;
+              default:
+                console.log('Sorry, we are out of ' + expr + '.');
+            }
+            // Result
+            "Mangoes and papayas are $2.79 a pound."
+
+        </code></pre>
+          </p>
+        </section>
+      </section>
+    </div>
+
+    <!--FUNCTIONS-->
+    <div class="slides">
+      <section>
+        <section>
+          <h1>Functions</h1>
+        </section>
+        <section>
+          <p>Functions allow creation of
+            <strong>reusable block of codes</strong>.</p>
+        </section>
+        <section>
+          <h3>Declaration</h3>
+          <p>
+            <pre><code class="js">
+          function functionName(param1, param2, ..., paramN) {
+            // function body
+          }
+
+          function square(x) {
+            return x * x;
+          };
+        </code></pre>
+          </p>
+        </section>
+        <section>
+          <h3>Usage</h3>
+          <pre><code class="js">
+          functionName(arg1, arg2, ..., argN);
+
+          square(4); // 16
+        </code></pre>
+          </p>
+        </section>
+        <section>
+          <p> A function can have multiple
+            <strong>parameters</strong> or
+            <strong>no parameters</strong> at all.</p>
+          <p>
+            <pre><code class="js">
+            // function without parameters
+            function greet() {
+              console.log("Hello World!");
+            };
+            greet(); // "Hello World!"
+
+
+            // function with parameters (a and b)
+            function sum(a, b) {
+              return a + b;
+            };
+            console.log(sum(3, 7)); // 10
+            </code></pre>
+          </p>
+        </section>
+        <section>
+          <p>A function can
+            <strong>return a value</strong> or
+            <strong>not</strong>.</p>
+          <p>
+            <pre><code class="js">
+            // function that does not returned a value
+            function greet() {
+              console.log("Hello World!");
+            };
+            greet(); // "Hello World!"
+
+
+            // function that do returned a value
+            function sum(a, b) {
+              return a + b;
+            };
+            console.log(sum(3, 7)); // 10
+            </code></pre>
+          </p>
+        </section>
+        <section>
+          <h3>Higher-order functions</strong>
+          </h3>
+        </section>
+        <section>
+          <p>Functions can be
+            <strong>assigned to a variable as value</strong>
+          </p>
+          <p>
+            <pre><code class="js">
+              var sum = function (a, b) {
+                return a + b;
+              };
+              console.log(sum(3, 7)); // 10
+              </code></pre>
+          </p>
+        </section>
+        <section>
+          <p>Functions can be
+            <strong>pass as arguments to another function</strong>
+          </p>
+          <p>
+            <pre><code class="js">
+                function greet() {
+                  console.log("Hello World!")
+                };
+
+                setTimeout(greet, 5000) // will print "Hello World" after 5 seconds
+              </code></pre>
+          </p>
+        </section>
+        <section>
+          <p>Functions can be
+            <strong>returned as value by a function</strong>
+          </p>
+          <p>
+            <pre><code class="js">
+              function addX(x) {
+                return function(y) {
+                  return x + y;
+                }
+              };
+
+              var addTen = addX(10);
+              console.log(addTen(12)); // 22
+            </code></pre>
+          </p>
+        </section>
+      </section>
+    </div>
+
+    <!--ARRAYS-->
+    <div class="slides">
+      <section>
+        <section>
+          <h1>Arrays</h1>
+        </section>
+
+        <section>
+          <p>Declaration, size, access/update items by index</p>
+          <p>
+            <pre><code class="js">
+                var tab1 = []; // declare empty array
+                var tab2 = [2, "test", true]; // declare array with values
+
+                // get item by index
+                console.log(tab1[0]); // undefined
+                console.log(tab2[0]); // 2
+
+                // change value of a specific index
+                tab2[1] = false;
+                console.log(tab2); // [2, false, true]
+
+                // get size
+                console.log(tab1.length); // 0
+                console.log(tab2.length); // 3
+              </code></pre>
+          </p>
+        </section>
+        <section>
+          <p>Append item, remove last item</p>
+
+          <p>
+            <pre><code class="js">
+                var tab1 = []; // declare empty array
+                var tab2 = [2, "test", true]; // declare array with values
+
+                // append item
+                tab1.push(15);
+                console.log(tab1); // [15]
+                tab1.push(8);
+                console.log(tab1); // [15, 8]
+
+                // remove last item
+                var last = tab2.pop();
+                console.log(last); // true
+                console.log(tab2); // [2, "test"]
+              </code></pre>
+          </p>
+        </section>
+      </section>
+    </div>
+    <!-- <div class="slides">
+      <section>
+        <section>Closure</section>
+        <section></section>
+      </section>
+    </div>
+
+    <div class="slides">
+      <section>
+        <section></section>
+        <section></section>
+      </section>
+    </div>
+
+    <div class="slides">
+      <section>
+        <section></section>
+        <section></section>
+      </section>
+    </div>
+
+    <div class="slides">
+      <section>
+        <section>Slide 1</section>
+        <section>Slide 2</section>
+      </section>
+    </div>
+ -->
+    <!--  <div class="slides">
+      <section>Slide 1</section>
+      <section>Slide 2</section>
+    </div> -->
+  </div>
+
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
+
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+      dependencies: [
+        { src: 'plugin/markdown/marked.js' },
+        { src: 'plugin/markdown/markdown.js' },
+        { src: 'plugin/notes/notes.js', async: true },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+      ]
+    });
+  </script>
+</body>
+
+</html>

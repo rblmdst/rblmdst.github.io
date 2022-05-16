@@ -1,0 +1,251 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Angular Training</title>
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <!-- <link rel="stylesheet" href="css/theme/black.css"> -->
+  <link rel="stylesheet" href="css/theme/white.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <!--  custom css -->
+  <link rel="stylesheet" href="css/custom.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <!--
+        ff7200
+        #2b7cd0
+      -->
+      <!--  <section data-background-opacity="0.1" data-background-image="assets/code.png"> -->
+      <section>
+        <!-- <div>
+          <img class="no-border" src="assets/angular.png" alt="angular">
+        </div> -->
+
+        <h1 style="color: #2b7cd0">Angular Training</h1>
+        <h4>Service-Dependency Injection</h4>
+      </section>
+    </div>
+
+    <!-- TRAINING PURPOSE -->
+    <div class="slides">
+      <section>
+        <section>
+          <h1>Purpose</h1>
+          <p>
+            Learn how to create service and to inject services.
+          </p>
+        </section>
+      </section>
+    </div>
+
+    <!--  -->
+    <div class="slides">
+      <section>
+        <section>
+          <h1>Dependency Injection</h1>
+        </section>
+        <section>
+          <p>One of the widely used
+            <strong>design patterns</strong> to keep
+            <u>code cleaner</u> is
+            <strong class="color-orange">Dependency Injection (DI)</strong> .</p>
+        </section>
+        <section>
+          <p>According to Dependency Injection, a
+            <strong class="color-orange">software component should not create its dependencies; <br/>rather, the dependencies should be injected</strong> by
+            an external source.</p>
+        </section>
+      </section>
+    </div>
+    <div class="slides">
+      <section>
+        <section>
+          <h1>Services in Angular</h1>
+        </section>
+        <section>
+          <p>
+            <strong class="color-orange">Services</strong>
+            centralize business-logic and separate it from the view completely.
+          </p>
+          <p>Thanks to dependency injection they can easily be consumed/injected in every component.</p>
+        </section>
+        <section>
+          <h2>Declaring a service</h2>
+        </section>
+        <section>
+          <p> A service is just a class decorated by the
+            <strong class="color-orange">@Injectable</strong> decorator.</p>
+          <p>
+            <pre><code class="ts">
+              import { Injectable } from '@angular/core';
+
+              @Injectable()
+              export class ExampleService {
+              
+              constructor() { }
+              
+              }
+            </code></pre>
+          </p>
+        </section>
+        <section>
+          <h2>Generating a service using angular-cli</h2>
+        </section>
+        <section>
+          <p class="color-orange">Generating a service using angular-cli</p>
+          <p>
+            <pre><code class="bash">
+                # ng generate service &lt;service name>
+                ng generate service customer
+              </code></pre>
+          </p>
+        </section>
+        <section>
+          <h2>Provide service in a module</h2>
+        </section>
+        <section>
+          <p class="color-orange">Provide service in a module</p>
+          <p>Before we can actually request an instance of a class/service in our component, we need to provide it in a module
+            <small>(this is not required from Angular 6)</small>, for example the App-Module. </p>
+        </section>
+        <section>
+          <p class="color-orange">Provide service in a module</p>
+          <p>
+            <pre><code class="ts">
+              // example.module.ts
+              import { NgModule } from '@angular/core';
+              import { CommonModule } from '@angular/common';
+              import { ExampleComponent } from './example.component';
+              import { ExampleService } from 'somewhere'
+
+              @NgModule({
+                imports: [
+                  CommonModule
+                ],
+                declarations: [ExampleComponent],
+                providers: [ExampleService]
+              })
+              export class ExampleModule { }
+              </code></pre>
+          </p>
+        </section>
+        <section>
+          <h2>Inject Service in a component</h2>
+        </section>
+        <section>
+          <p class="color-orange">Inject service in a component</p>
+
+          <p>A registered dependency/service can be injected into a component’s constructor.</p>
+        </section>
+        <section>
+          <small>Afterward, we can request an instance of ExampleService in any component, that is part or child of the provider-module;
+            <br/> or in any component, that is part or child of a module that imports the provider-module. </small>
+          <p>
+            <pre><code class="ts">
+            // example.component.ts
+            @Component({
+              selector: 'app-example',
+              templateUrl: './example.component.html',
+              styleUrls: ['./example.component.css']
+            })
+            export class ExampleComponent implements OnInit {
+
+              constructor(private exampleService: ExampleService) { }
+
+              ngOnInit() {
+                this.exampleService.doSomething();
+              }
+
+            }
+            </code></pre>
+          </p>
+        </section>
+        <section>
+          <h2>Service in Angular 6+</h2>
+        </section>
+        <section>
+          <p class="color-orange">Service in Angular 6+</p>
+          <p>Starting from
+            <strong>Angular 6</strong> a
+            <strong>service can be created without been linked explicitly to a module</strong>.
+            <small>(It makes the service Tree-Shakable.)</small>
+          </p>
+          <p>
+            <pre><code class="ts">
+            import { Injectable } from '@angular/core';
+
+            @Injectable({
+              providedIn: 'root'
+            })
+            export class CustomerService {
+              constructor() { }
+            }
+          </code></pre>
+          </p>
+        </section>
+        <section>
+          <h2>Injecting Dependencies into services</h2>
+        </section>
+        <section>
+          <p class="color-orange">Injecting Dependencies into services</p>
+          <p>
+            <pre><code class="ts">
+            import { Injectable } from '@angular/core';
+            
+            @Injectable()
+            export class OtherService {
+              constructor(private explServ: ExampleService) { }
+            }
+            </code></pre>
+          </p>
+        </section>
+
+        <section>
+          <p>
+            For more details about
+            <strong>DI in Angular</strong> read :
+            <br/>
+            <span class="color-orange">https://angular.io/guide/dependency-injection</span>
+          </p>
+        </section>
+    </div>
+  </div>
+
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
+
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+      dependencies: [
+        { src: 'plugin/markdown/marked.js' },
+        { src: 'plugin/markdown/markdown.js' },
+        { src: 'plugin/notes/notes.js', async: true },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+      ]
+    });
+  </script>
+</body>
+
+</html>
