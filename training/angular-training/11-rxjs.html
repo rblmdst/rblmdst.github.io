@@ -482,10 +482,7 @@
               const source1 = interval(1000);
               const source2 = interval(3000);
 
-              const mergeSub = source1
-              .pipe(
-                merge(source2)
-              )
+              const mergeSub = merge(source2, source1)
               .subscribe(x => console.log(x))
 
               setTimeout(() => mergeSub.unsubscribe(), 6000)
@@ -538,10 +535,8 @@
             <pre><code class="ts">
             import { concat } from 'rxjs/operators'
 
-            source3
-            .pipe(
-              concat(source4)
-            )
+            
+	    concat(source3, source4)
             .subscribe(x => console.log(x))
 
             /*
