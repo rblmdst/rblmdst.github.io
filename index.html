@@ -1,564 +1,569 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <title>Modeste ASSIONGBON(@rblmdst)</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- <link rel="icon" type="image/x-icon" href="favicon.ico"> -->
-  <link rel="stylesheet" type="text/css" href="dist/styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modeste ASSIONGBON (@rblmdst) - Portfolio</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div id="header">
-    <div id="avatar">
-      <img src="dist/assets/avatar.jpeg" />
-    </div>
-  </div>
-  <div id="container">
-    <section id="me">
-      <p>
-        Hi, my name is <span class="thin">Modeste ASSIONGBON</span>.
-         I’m a <span class="thin">Senior JavaScript Developer</span>, passionate about <span class="thin">JavaScript and Angular</span>. 
-         I’m also a <span class="thin">Google Developer Expert (GDE) in Angular</span>, <span class="thin">Speaker</span>, <span class="thin">Trainer</span>, and <span class="thin">Video content creator</span>.
-      </p>
+
+  <div class="container">
+    <!-- Header -->
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1 class="name">MODESTE ASSIONGBON</h1>
+
+
+        <p>
+          I'm a Senior JavaScript Developer, passionate about JavaScript and Angular. I’m also Speaker, Trainer, Video
+          Content Creator and a Google Developer Expert
+          (GDE) in Angular.
+        </p>
+        <div class="cta-group">
+
+          <div class="social-links">
+            <a href="https://twitter.com/rblmdst" target="_blank" class="social-btn"><i
+                class="fa-brands fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/%F0%9F%92%A3-modeste-assiongbon-41b90113a/" target="_blank"
+              class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://youtube.com/@devpropulsor" target="_blank" class="social-btn"><i
+                class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="dist/assets/avatar.jpeg" alt="Modeste ASSIONGBON">
+      </div>
     </section>
-    <section id="skills">
-      <h2>Skills</h2>
-      <p>My skills can be summarized as follow :</p>
-      <h3>Hard skills</h3>
-      <ul class="small">
-        <li>
-          Language :
-          <span class="thin">JavaScript (Vanilla/ES6), Typescript, SQL, CSS/LESS/SCSS.</em></span>
-        </li>
-        <li>
-          Framework & Execution environment :
-          <span class="thin">Angular, Express.js, Node.js.</span>
-        </li>
-        <li> Database : <span class="thin">MySQL, MongoDB.</span></li>
-        <li>
-          Library :
-          <span class="thin">Mongoose, RxJs, NgRx, NgRx Signal Store, Angular Material.</span>
-        </li>
-        <li> Testing : <span class="thin">Mocha-Chai-Sinon, Node.Js native test runner, Jest, Cypress.</span></li>
-        <li> Server : <span class="thin"> Nginx, RabbitMQ, ElasticSearch.</span></li>
-        <li> Tools : <span class="thin"> Docker.</span>
-        <li> Others : <span class="thin"> REST, Agile, SOLID, Clean Code, Hexagonal Architecture, Event Driven.</span>
-        </li>
-      </ul>
-      <h3>Soft skills</h3>
-      <ul class="small">
-        <li> <span class="thin"><span class="thin">In my roles, I support and ensure the team's skill development in the
-              technologies I use.</span></li>
-        <li> <span class="thin"><span class="thin">I am committed to continuous improvement through ongoing
-              technological monitoring.</span></li>
-        <li> <span class="thin"><span class="thin">I am keenly interested in understanding the business to provide
-              solutions tailored to the client's needs.</span></li>
-      </ul>
+
+    <!-- About & Skills -->
+    <section class="about-skills">
+      <div class="about-me">
+        <h3 class="section-title">Soft Skills</h3>
+        <div class="about-text">
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 10px; display: flex; align-items: flex-start; gap: 10px;">
+              <i class="fa-solid fa-check"
+                style="color: var(--skill-chip-bg); margin-top: 5px; margin-right: 10px; flex-shrink: 0;"></i>
+              <span>In my roles, I support and ensure the team's skill development in the technologies I use.</span>
+            </li>
+            <li style="margin-bottom: 10px; display: flex; align-items: flex-start; gap: 10px;">
+              <i class="fa-solid fa-check"
+                style="color: var(--skill-chip-bg); margin-top: 5px; margin-right: 10px; flex-shrink: 0;"></i>
+              <span>I am committed to continuous improvement through ongoing technological monitoring.</span>
+            </li>
+            <li style="margin-bottom: 10px; display: flex; align-items: flex-start; gap: 10px;">
+              <i class="fa-solid fa-check"
+                style="color: var(--skill-chip-bg); margin-top: 5px; margin-right: 10px; flex-shrink: 0;"></i>
+              <span>I am keenly interested in understanding the business to provide solutions tailored to the client's
+                needs.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="my-skills">
+        <h3 class="section-title">Hard Skills</h3>
+        <div class="skills-list">
+          <p><strong>Language :</strong> JavaScript (Vanilla/ES6), Typescript, SQL, CSS/LESS/SCSS.</p>
+          <p><strong>Framework & Execution environment :</strong> Angular, Express.js, Node.js.</p>
+          <p><strong>Database :</strong> MySQL, MongoDB.</p>
+          <p><strong>Library :</strong> Mongoose, RxJs, NgRx, NgRx Signal Store, Angular Material.</p>
+          <p><strong>Testing :</strong> Mocha-Chai-Sinon, Node.Js native test runner, Jest, Cypress.</p>
+          <p><strong>Server :</strong> Nginx, RabbitMQ, ElasticSearch.</p>
+          <p><strong>Tools :</strong> Docker.</p>
+          <p><strong>Others :</strong> REST, Agile, SOLID, Clean Code, Hexagonal Architecture, Event Driven.</p>
+        </div>
+      </div>
     </section>
-    <section id="personal-project">
-      <h2>Personal Projects </h2>
-      <p>I dedicate my free time to create content, speak at event or write code...</p>
 
-      <h3>Co-Organizer </h3>
-      <div class="event-list">
-        <div class="event-item">
-          <div class="event-date-and-title">
-            <span class="event-date">Nov 2O23 - Feb 2024</span> <span class="event-type">[ 06 Fev 2024 @ Google Paris ]
-            </span>: <span class="event-title">DevFest Paris 2024</span>
-          </div>
-          <div class="event-description">
-            <p>DevFests are community-led non-profit developer events crafted with love hosted by Google Developer
-              Groups across the globe. DevFest is the best way to engage with the local developer community, offering
-              collective learning opportunities.</p>
-            <p>I joined the GDG (Google Developers Group) Paris team to assist in organizing DevFest Paris 2024 and
-              contribute to the evolution of this community.
-            </p>
-            <p>My role :
-            <ul>
-              <li>Design, development, and maintenance of the event website (https://devfest.gdgparis.fr/)</li>
-              <li>Proactively suggesting ideas on a range of topics related to the event</li>
-              <li>Ensuring engagement on social media platforms</li>
-              <li>And contributing in other areas as needed.</li>
-            </ul>
-            </p>
-          </div>
-        </div>
-        <div class="event-item">
-          <div class="event-date-and-title">
-            <span class="event-date">Mar 2024 - Jul 2025</span> <span class="event-type">[ GDG Paris ]
-            </span>: <span class="event-title">Google Developer Group Co-Organizer</span>
-          </div>
-          <div class="event-description">
-            <p>As a co-organizer, I contributed to the organization of various meetups and events for GDG Paris, helped
-              find hosts for the events, ensured communication with speakers, hosts, partners, and sponsors,and
-              supported the growth of the community.</p>
-          </div>
-        </div>
-        <div class="event-item">
-          <div class="event-date-and-title">
-            <span class="event-date">Aug 2025 - Today</span> <span class="event-type">[ GDG Afrique Francophone ]
-            </span>: <span class="event-title">Google Developer Group Co-Organizer</span>
+    <!-- YouTube Channel -->
+    <section class="projects" id="youtube-channel">
+      <div style="text-align: center;">
+        <h3 class="section-title">YouTube Channel</h3>
+      </div>
+      <div class="project-grid">
+        <!-- Dev Propulsor -->
+        <div class="project-card">
+          <div class="project-content">
+            <h3><i class="fa-brands fa-youtube"></i> Dev Propulsor</h3>
+            <p>Technical YouTube channel in French, assisting individuals to start in Web Development or enhance their
+              knowledge.</p>
+            <div class="card-footer">
+              <a href="https://youtube.com/@devpropulsor" target="_blank" class="btn">Watch Channel</a>
+            </div>
           </div>
         </div>
       </div>
-      <h3>Content Creator</h3>
-      <p>
-        Apart from being a developer, I also <span class="thin">create content in french about Web Development in
-          general to assist individuals looking to start in the field or enhance their knowledge</span>. You can visit
-        my channel by clicking on this link <a class="thin" target="_blank" href="https://youtube.com/@devpropulsor">
-          <i class="fa fa-youtube"></i> Dev Propulsor</a>.
-      </p>
-      <h3>Speaker / Trainer</h3>
-      <p>Apart from creating content on my YouTube channel, I never hesitate to share my knowledge by participating as a
-        speaker or trainer at various events, such as tech community meetups and conferences.</p>
-      <p>You will find a history of my
-        involvements below, with links to these events for those still available online.</p>
-      <div class="event-item">
-        <div class="event-date-and-title">
-          <span class="event-date">27 Nov 2025 </span> <span class="event-type">[Talk] <span title="language: french">
-              🇫🇷</span>
-          </span>: <span class="event-title">[DevFest Strasbourg 2025] - Node.js peut faire ça !! Exploitons les fonctionnalités
-            natives de Node.js</span>
-        </div>
-        <div class="event-description">
-          <p>Node.js has evolved significantly in recent years, with many improvements aimed at optimizing the developer
-            experience. During this talk, I highlighted some of Node.js's native features that, when well understood,
-            can help developers reduce their reliance on third-party NPM modules in their projects.</p>
-        </div>
-        <div class="event-links">
-          <ul>
-            <li><a  target="_blank" href="https://devfest.gdgstrasbourg.fr/schedule">Event Page</a></li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="event-item">
-        <div class="event-date-and-title">
-          <span class="event-date">17 Oct 2025 </span> <span class="event-type">[Workshop] <span title="language: french">
-              🇫🇷</span>
-          </span>: <span class="event-title">[DevFest Nantes 2025] - Angular Signal - Monde Asynchrone, État dépendant</span>
-        </div>
-        <div class="event-description">
-          <p>A 2-hour Angular workshop on Resources and LinkedSignal at DevFest Nantes 2025 — the largest DevFest in Europe.</p>
-          <p>The goal of this workshop is to clarify the purpose and benefits of Resources (resource, rxResource, httpResource) and LinkedSignal through real-world use cases and hands-on examples.
-This workshop was based on Angular version 20.</p>
-        </div>
-        <div class="event-links">
-          <ul>
-            <li><a  target="_blank" href="https://devfest2025.gdgnantes.com/en/sessions/angular_signal___monde_asynchrone__etat_dependant">Event Page</a></li>
-          </ul>
-        </div>
-      </div>
+    </section>
 
-      <div class="event-item">
-        <div class="event-date-and-title">
-          <span class="event-date">19 Jun 2025 </span> <span class="event-type">[Talk] <span title="language: french">
-              🇫🇷</span>
-          </span>: <span class="event-title">[Voxxed Days Luxembourg 2025] - Les Single Page Applications et différents
-            types de rendu (CSR, SSR, SSG, ISR)</span>
+    <!-- Speaking & Community -->
+    <section class="speaking">
+      <div class="speaking-grid">
+        <!-- Community Organization -->
+        <div class="column">
+          <h3 class="section-title">Community Organization</h3>
+          <div class="event-list">
+            <div class="event-item">
+              <div class="event-icon"><i class="fa-solid fa-users"></i></div>
+              <div class="event-details">
+                <h4>Google Developer Group Co-Organizer</h4>
+                <div class="event-meta">Mar 2024 - Present | GDG Paris & Afrique Francophone</div>
+                <p class="event-desc">
+                  Organizing meetups, finding hosts, communicating with speakers/partners, and supporting community
+                  growth.
+                </p>
+              </div>
+            </div>
+            <div class="event-item">
+              <div class="event-icon"><i class="fa-solid fa-calendar-check"></i></div>
+              <div class="event-details">
+                <h4>DevFest Paris Organizer</h4>
+                <div class="event-meta">Nov 2023 - Feb 2024</div>
+                <p class="event-desc">
+                  Contributed to organizing DevFest Paris 2024. Designed and developed the event website.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="event-description">
-          <p>The goal of this talk is to provide a brief history of how rendering strategies have evolved over time, to
-            review the different types of rendering available today by presenting the advantages and disadvantages of
-            each, and finally to offer the key elements needed to decide which one to choose based on your needs.</p>
-        </div>
-        <div class="event-links">
-          <ul>
-            <li><a  target="_blank" href="https://youtu.be/NjcQ2zmUgWQ?si=jOi_O2GXms9s0oem">Video (Youtube)</a></li>
-          </ul>
-        </div>
-      </div>
 
-      <div class="event-item">
-        <div class="event-date-and-title">
-          <span class="event-date">18 Apr 2025 </span> <span class="event-type">[Workshop] <span
-              title="language: french">
-              🇫🇷</span>
-          </span>: <span class="event-title">[DevoxxFR 2025] - Angular 19 - L'ère des applications complètes basées sur
-            les signaux</span>
-        </div>
-        <div class="event-description">
-          <p>A 3-hour workshop co-organized with Amadou SALL (Angular GDE) during DevoxxFR 2025.</p>
-          <p>The goal of the workshop is to guide participants in developing a modern application based on signals,
-            using the new signal-based APIs (signal, computed, effect, linkedSignal, input, output, model, signal
-            queries, toSignal, toObservable, resource, rxResource, httpResource).</p>
+        <!-- NPM Libraries -->
+        <div class="column">
+          <h3 class="section-title">NPM Libraries</h3>
+          <div class="event-list">
+            <!-- i18n-lib -->
+            <div class="event-item">
+              <div class="event-icon"><i class="fa-solid fa-cube"></i></div>
+              <div class="event-details">
+                <h4>i18n-lib</h4>
+                <p class="event-desc">
+                  An internationalization library for Node.js, designed to be simple and efficient for backend services.
+                </p>
+                <div class="event-links">
+                  <a href="https://www.npmjs.com/package/@rblmdst/i18n-lib" target="_blank" class="link-btn"><i
+                      class="fa-solid fa-link"></i> View on NPM</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Scheval -->
+            <div class="event-item">
+              <div class="event-icon"><i class="fa-solid fa-check-double"></i></div>
+              <div class="event-details">
+                <h4>Scheval</h4>
+                <p class="event-desc">
+                  A JavaScript object/schema validator with a simple and comprehensible API, making data validation
+                  straightforward.
+                </p>
+                <div class="event-links">
+                  <a href="https://www.npmjs.com/package/@rblmdst/scheval" target="_blank" class="link-btn"><i
+                      class="fa-solid fa-link"></i> View on NPM</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="event-item">
-        <div class="event-date-and-title">
-          <span class="event-date">18 Apr 2025 </span> <span class="event-type">[Talk] <span title="language: french">
-              🇫🇷</span>
-          </span>: <span class="event-title">[DevoxxFR 2025] - Node.js peut faire ça !! Exploitons les fonctionnalités
-            natives de Node.js</span>
-        </div>
-        <div class="event-description">
-          <p>Node.js has evolved significantly in recent years, with many improvements aimed at optimizing the developer
-            experience. During this talk, I highlighted some of Node.js's native features that, when well understood,
-            can help developers reduce their reliance on third-party NPM modules in their projects.</p>
-        </div>
-        <div class="event-links">
-          <ul>
-            <li><a  target="_blank" href="https://youtu.be/0R5_UvToKs0?si=Ymp9OAmzXI8vfCyG">Video (Youtube)</a></li>
-          </ul>
+      <!-- All Talks Section -->
+      <div class="all-talks" style="margin-top: 60px;">
+        <h3 class="section-title">All Talks & Engagements</h3>
+        <div class="event-list">
+
+          <div class="event-item">
+            <div class="event-icon"><i class="fa-solid fa-microphone"></i></div>
+            <div class="event-details">
+              <h4>[DevFest Strasbourg 2025] - Node.js peut faire ça !! Exploitons les fonctionnalités natives de Node.js
+              </h4>
+              <div class="event-meta">Nov 27, 2025</div>
+              <p class="event-desc">
+                Node.js has evolved significantly in recent years, with many improvements aimed at optimizing the
+                developer experience. During this talk, I highlighted some of Node.js's native features that, when well
+                understood, can help developers reduce their reliance on third-party NPM modules in their projects.
+              </p>
+              <div class="event-links">
+                <a href="https://devfest.gdgstrasbourg.fr/schedule" target="_blank" class="link-btn"><i
+                    class="fa-solid fa-link"></i> Event Page</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-item">
+            <div class="event-icon"><i class="fa-solid fa-laptop-code"></i></div>
+            <div class="event-details">
+              <h4>[DevFest Nantes 2025] - Angular Signal - Monde Asynchrone, État dépendant</h4>
+              <div class="event-meta">Oct 17, 2025</div>
+              <p class="event-desc">
+                The goal of this workshop is to clarify the purpose and benefits of Resources (resource, rxResource,
+                httpResource) and LinkedSignal through real-world use cases and hands-on examples. This workshop was
+                based on Angular version 20.
+              </p>
+              <div class="event-links">
+                <a href="https://devfest2025.gdgnantes.com/en/sessions/angular_signal___monde_asynchrone__etat_dependant"
+                  target="_blank" class="link-btn"><i class="fa-solid fa-link"></i> Event Page</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-item">
+            <div class="event-icon"><i class="fa-solid fa-microphone"></i></div>
+            <div class="event-details">
+              <h4>[Voxxed Days Luxembourg 2025] - Les Single Page Applications et différents types de rendu (CSR, SSR,
+                SSG, ISR)</h4>
+              <div class="event-meta">Jun 19, 2025</div>
+              <p class="event-desc">
+                The goal of this talk is to provide a brief history of how rendering strategies have evolved over time,
+                to review the different types of rendering available today by presenting the advantages and
+                disadvantages of each, and finally to offer the key elements needed to decide which one to choose based
+                on your needs.
+              </p>
+              <div class="event-links">
+                <a href="https://youtu.be/NjcQ2zmUgWQ?si=jOi_O2GXms9s0oem" target="_blank" class="link-btn"><i
+                    class="fa-brands fa-youtube"></i> Video</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-item">
+            <div class="event-icon"><i class="fa-solid fa-laptop-code"></i></div>
+            <div class="event-details">
+              <h4>[DevoxxFR 2025] - Angular 19 - L'ère des applications complètes basées sur les signaux</h4>
+              <div class="event-meta">Apr 18, 2025</div>
+              <p class="event-desc">
+                The goal of the workshop is to guide participants in developing a modern application based on signals,
+                using the new signal-based APIs (signal, computed, effect, linkedSignal, input, output, model, signal
+                queries, toSignal, toObservable, resource, rxResource, httpResource).
+              </p>
+            </div>
+          </div>
+
+          <div class="event-item">
+            <div class="event-icon"><i class="fa-solid fa-microphone"></i></div>
+            <div class="event-details">
+              <h4>[DevoxxFR 2025] - Node.js peut faire ça !! Exploitons les fonctionnalités natives de Node.js</h4>
+              <div class="event-meta">Apr 18, 2025</div>
+              <p class="event-desc">
+                Node.js has evolved significantly in recent years, with many improvements aimed at optimizing the
+                developer experience. During this talk, I highlighted some of Node.js's native features that, when well
+                understood, can help developers reduce their reliance on third-party NPM modules in their projects.
+              </p>
+              <div class="event-links">
+                <a href="https://youtu.be/0R5_UvToKs0?si=Ymp9OAmzXI8vfCyG" target="_blank" class="link-btn"><i
+                    class="fa-brands fa-youtube"></i> Video</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-item">
+            <div class="event-icon"><i class="fa-solid fa-microphone"></i></div>
+            <div class="event-details">
+              <h4>[MKUTANO IT] - Angular - @let - Déclaration de variables dans les templates</h4>
+              <div class="event-meta">Feb 22, 2025</div>
+              <p class="event-desc">
+                The goal of this talk was to demonstrate, through various use cases, how the new variable declaration
+                feature in templates, introduced in Angular 18, enhances the developer experience.
+              </p>
+              <div class="event-links">
+                <a href="https://mkutano.org/home" target="_blank" class="link-btn"><i class="fa-solid fa-link"></i>
+                  Event Page</a>
+                <a href="https://youtu.be/2ATEB-SpqMg?t=11726" target="_blank" class="link-btn"><i
+                    class="fa-brands fa-youtube"></i> Video</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-item">
+            <div class="event-icon"><i class="fa-solid fa-microphone"></i></div>
+            <div class="event-details">
+              <h4>[Paris Angular #1] - Angular Deferrable Views</h4>
+              <div class="event-meta">Feb 03, 2025</div>
+              <p class="event-desc">
+                The goal was to present how the new Deferrable Views feature, introduced in Angular 17, improves not
+                only application performance but also user experience.
+              </p>
+              <div class="event-links">
+                <a href="https://www.meetup.com/paris-angular/events/305655014/?eventOrigin=group_events_list"
+                  target="_blank" class="link-btn"><i class="fa-solid fa-link"></i> Event Page</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2024 -->
+
+          <div class="event-item">
+            <div class="event-icon"><i class="fa-solid fa-microphone"></i></div>
+            <div class="event-details">
+              <h4>[DevFest Yamoussoukro] - Angular - @let - Déclaration de variables dans les templates</h4>
+              <div class="event-meta">Dec 14, 2024</div>
+              <p class="event-desc">
+                The goal of this talk was to demonstrate, through various use cases, how the new variable declaration
+                feature in templates, introduced in Angular 18, enhances the developer experience.
+              </p>
+              <div class="event-links">
+                <a href="https://gdg.community.dev/events/details/google-gdg-yamoussoukro-presents-devfest-yamoussoukro-2024/"
+                  target="_blank" class="link-btn"><i class="fa-solid fa-link"></i> Event Page</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-item">
+            <div class="event-icon"><i class="fa-solid fa-microphone"></i></div>
+            <div class="event-details">
+              <h4>[Node.js Paris #3] - Node.js Can Do That !! 🤯</h4>
+              <div class="event-meta">Dec 11, 2024</div>
+              <p class="event-desc">
+                I gave this talk at the Node.js Paris meetup #3, chapitre 12. Node.js has evolved significantly in
+                recent years, with many improvements aimed at optimizing the developer experience. During this talk, I
+                highlighted some of Node.js's native features that, when well understood, can help developers reduce
+                their reliance on third-party NPM modules in their projects.
+              </p>
+              <div class="event-links">
+                <a href="https://www.meetup.com/nodejs-paris/events/304374467/?eventOrigin=group_events_list"
+                  target="_blank" class="link-btn"><i class="fa-solid fa-link"></i> Event Page</a>
+                <a href="https://youtu.be/eAKom0M9--o?si=MN04Y_vuuqR86VWF" target="_blank" class="link-btn"><i
+                    class="fa-brands fa-youtube"></i> Video</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-item">
+            <div class="event-icon"><i class="fa-solid fa-users"></i></div>
+            <div class="event-details">
+              <h4>[Angular Devs France] - Live table ronde sortie Angular 19</h4>
+              <div class="event-meta">Dec 10, 2024</div>
+              <p class="event-desc">
+                During this live roundtable organized by Angular Devs France, we discussed the major changes introduced
+                in Angular 19, enterprise experiences in migrating projects to the new signal-based APIs, and many other
+                topics.
+              </p>
+              <div class="event-links">
+                <a href="https://www.youtube.com/live/5z2FC0bc0ug?si=90zfGvsZQxkrDkzh" target="_blank"
+                  class="link-btn"><i class="fa-brands fa-youtube"></i> Video</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-item">
+            <div class="event-icon"><i class="fa-solid fa-users"></i></div>
+            <div class="event-details">
+              <h4>[Possacode Day] - Comment bien construire sa carrière de développeur frontend</h4>
+              <div class="event-meta">Nov 08, 2024</div>
+              <p class="event-desc">
+                During Possacode Day, I had the opportunity to participate in a panel organized by Possacode. The goal
+                was to allow senior developers and experts from different technologies to share their experiences on
+                building a successful frontend developer career.
+              </p>
+            </div>
+          </div>
+
+          <div class="event-item">
+            <div class="event-icon"><i class="fa-solid fa-code"></i></div>
+            <div class="event-details">
+              <h4>[Meetup GDG Paris] - La Programmation Réactive & RxJS</h4>
+              <div class="event-meta">Jul 02, 2024</div>
+              <p class="event-desc">
+                I gave this talk at a meetup organized by GDG (Google Developers Groups) Paris. The goal of the talk was
+                to demystify RxJS from scratch, sharing with the audience the essentials needed to become independent
+                with RxJS, the utility of high-order observables, subjects, the concepts of cold and hot observables,
+                among other things.
+              </p>
+              <div class="event-links">
+                <a href="https://gdg.community.dev/events/details/google-gdg-paris-presents-la-programmation-reactive-amp-rxjs-nauront-plus-de-secrets-pour-vous/"
+                  target="_blank" class="link-btn"><i class="fa-solid fa-link"></i> Event Page</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-item">
+            <div class="event-icon"><i class="fa-solid fa-microphone"></i></div>
+            <div class="event-details">
+              <h4>[Google I/O Extended Connect 2024 Paris] - Renaissance d'Angular</h4>
+              <div class="event-meta">Jun 20, 2024</div>
+              <p class="event-desc">
+                I gave this talk at the Google I/O Extended Connect 2024 Paris, a meetup organized by GDG (Google
+                Developers Groups) Paris to share the key points of the Google I/O 2024. The goal of this talk was to
+                summarize the key points from the Angular team's presentation at the last Google I/O. The talk was
+                structured into three main parts: new features, community news, and finally, the Angular team’s
+                collaborations and their roadmap for upcoming versions of Angular.
+              </p>
+              <div class="event-links">
+                <a href="https://gdg.community.dev/events/details/google-gdg-paris-presents-google-io-extended-connect-2024-paris/"
+                  target="_blank" class="link-btn"><i class="fa-solid fa-link"></i> Event Page</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-item">
+            <div class="event-icon"><i class="fa-solid fa-microphone"></i></div>
+            <div class="event-details">
+              <h4>[Google I/O Extended Connect Afrique Francophone] - Renaissance d'Angular</h4>
+              <div class="event-meta">May 25, 2024</div>
+              <p class="event-desc">
+                I gave this talk at the Google I/O Extended Connect Afrique Francophone, an online conference which
+                gathered several GDGs (Google Developers Groups) of Francophone Africa to share the key points of the
+                Google I/O 2024. The goal of this talk was to summarize the key points from the Angular team's
+                presentation at the last Google I/O. The talk was structured into three main parts: new features,
+                community news, and finally, the Angular team’s collaborations and their roadmap for upcoming versions
+                of Angular.
+              </p>
+              <div class="event-links">
+                <a href="https://gdg.community.dev/events/details/google-gdg-cloud-abidjan-presents-google-io-extended-connect-afrique-francophone/"
+                  target="_blank" class="link-btn"><i class="fa-solid fa-link"></i> Event Page</a>
+                <a href="https://www.youtube.com/live/I7YBF3ymbdQ?si=u8OhsWsr1qpjD-Oi&t=976" target="_blank"
+                  class="link-btn"><i class="fa-brands fa-youtube"></i> Video</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-item">
+            <div class="event-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+            <div class="event-details">
+              <h4>[Workshop GDG Cloud Abidjan & GDG Bassam] - Initiation à Angular V16+</h4>
+              <div class="event-meta">May 07 - May 30 2024</div>
+              <p class="event-desc">
+                Angular training lasting a total of more than 14 hours, co-organized with GDG Cloud Abidjan & GDG
+                Bassam. The training is spread over several days (Tuesday, Thursday) for four weeks (a total of 8
+                sessions). The goal is to provide you with essential basic knowledge, the fundamentals to start with
+                Angular or deepen your understanding of the framework.
+              </p>
+              <div class="event-links">
+                <a href="https://gdg.community.dev/events/details/google-gdg-cloud-abidjan-presents-session-18-introduction-rapide-a-typescript-2024-05-07/"
+                  target="_blank" class="link-btn"><i class="fa-solid fa-link"></i> Event Page</a>
+                <a href="https://youtube.com/playlist?list=PLm4nL84YHygSDB_F64y4nofn3NO_91ZPt&si=mSM3v34G3Lpv7iF6"
+                  target="_blank" class="link-btn"><i class="fa-brands fa-youtube"></i> Playlist</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-item">
+            <div class="event-icon"><i class="fa-solid fa-microphone"></i></div>
+            <div class="event-details">
+              <h4>[DevoxxFR] - Angular Deferrable Views : Améliorer la performance et l'UX</h4>
+              <div class="event-meta">Apr 18, 2024</div>
+              <p class="event-desc">
+                I gave this talk at the DevoxxFR 2024 Conference in Paris. The goal of this talk was to present how the
+                new Deferrable Views feature introduced in Angular version 17 helps improve not only an application
+                performance but also the user experience.
+              </p>
+              <div class="event-links">
+                <a href="https://www.youtube.com/watch?v=Y85kc7bGszI" target="_blank" class="link-btn"><i
+                    class="fa-brands fa-youtube"></i> Video</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2023 -->
+
+          <div class="event-item">
+            <div class="event-icon"><i class="fa-solid fa-laptop-code"></i></div>
+            <div class="event-details">
+              <h4>[Workshop GDG Paris] - Atelier Découverte des Signaux Angular V16+</h4>
+              <div class="event-meta">Nov 23, 2023</div>
+              <p class="event-desc">
+                The goal of this workshop, co-organized with GDG Paris, was to introduce the audience to the new Signal
+                API introduced in Angular version 16. It provides a straightforward API for developing reactive
+                applications.
+              </p>
+              <div class="event-links">
+                <a href="https://gdg.community.dev/events/details/google-gdg-paris-presents-atelier-decouverte-des-signaux-angular/"
+                  target="_blank" class="link-btn"><i class="fa-solid fa-link"></i> Event Page</a>
+                <a href="https://youtu.be/VG8h_uIeTbU" target="_blank" class="link-btn"><i
+                    class="fa-brands fa-youtube"></i> Video</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-item">
+            <div class="event-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+            <div class="event-details">
+              <h4>[Workshop GDG Lomé] - Formation d'initaition à Angular V16+</h4>
+              <div class="event-meta">Oct 24 - Nov 04, 2023</div>
+              <p class="event-desc">
+                Angular training lasting a total of more than 8 hours, co-organized with GDG Lomé. The training is
+                spread over several days (Tuesday, Thursday, Saturday) for two weeks (a total of 6 sessions). The goal
+                is to provide you with essential basic knowledge, the fundamentals to start with Angular or deepen your
+                understanding of the framework.
+              </p>
+              <div class="event-links">
+                <a href="https://gdg.community.dev/events/details/google-gdg-lome-presents-creez-des-applications-web-interactives-angular-jour-1/"
+                  target="_blank" class="link-btn"><i class="fa-solid fa-link"></i> Event Page</a>
+                <a href="https://youtube.com/playlist?list=PLnBtvYS1AbOyA1u8ZogWqiIGoL0H98bHU&si=bMrKR38IT7yceJ80"
+                  target="_blank" class="link-btn"><i class="fa-brands fa-youtube"></i> Playlist</a>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="event-item">
+            <div class="event-icon"><i class="fa-solid fa-microphone"></i></div>
+            <div class="event-details">
+              <h4>[MKUTANO IT 2023] - JavaScript is everywhere... let's bet on it</h4>
+              <div class="event-meta">Sep 30, 2023</div>
+              <p class="event-desc">
+                At the MKUTANO 2023 conference, I had the opportunity to explain to the audience why JavaScript is the
+                language to invest in for the future.
+              </p>
+              <div class="event-links">
+                <a href="https://youtu.be/h1_nk7Gqxf0?si=LT1-caSNiBCmDko0" target="_blank" class="link-btn"><i
+                    class="fa-brands fa-youtube"></i> Video</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-item">
+            <div class="event-icon"><i class="fa-solid fa-code"></i></div>
+            <div class="event-details">
+              <h4>[Meetup ESGI] - Implémentation d'une API REST en utilisant Express.js et Typescript</h4>
+              <div class="event-meta">Jan 27, 2023</div>
+              <p class="event-desc">
+                During an online meetup organized by ESGI students on TypeScript, I had the opportunity to share,
+                through live coding, how to set up a REST API from scratch using TypeScript and Express.js.
+              </p>
+            </div>
+          </div>
+
         </div>
       </div>
+    </section>
 
-      <div class="event-item">
-        <div class="event-date-and-title">
-          <span class="event-date">22 Feb 2025 </span> <span class="event-type">[Talk] <span title="language: french">
-              🇫🇷</span>
-          </span>: <span class="event-title">[MKUTANO IT] - Angular - @let - Déclaration de variables dans les templates
-            : Amélioration de l'expérience développeur</span>
-        </div>
-        <div class="event-description">
-          <p>The goal of this talk was to demonstrate, through various use cases, how the new variable declaration
-            feature in templates, introduced in Angular 18, enhances the developer experience.</p>
-        </div>
-        <div class="event-links">
-          <ul>
-            <li><a  target="_blank" href="https://mkutano.org/home">Event
-                Page</a></li>
-            <li><a  target="_blank" href="https://youtu.be/2ATEB-SpqMg?t=11726">Video (Youtube)</a></li>
-          </ul>
-        </div>
-      </div>
+    <!-- Footer -->
+    <footer id="contacts">
+      <div class="footer-content">
+        <div class="footer-left">
 
-      <div class="event-item">
-        <div class="event-date-and-title">
-          <span class="event-date">03 Feb 2025 </span> <span class="event-type">[Talk] <span title="language: french">
-              🇫🇷</span>
-          </span>: <span class="event-title">[Paris Angular #1] - Angular Deferrable Views : Améliorer la performance et
-            l'UX.</span>
+          <div class="social-links">
+            <a href="https://twitter.com/rblmdst" target="_blank" class="social-btn"><i
+                class="fa-brands fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/%F0%9F%92%A3-modeste-assiongbon-41b90113a/" target="_blank"
+              class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://youtube.com/@devpropulsor" target="_blank" class="social-btn"><i
+                class="fa-brands fa-youtube"></i></a>
+          </div>
         </div>
-        <div class="event-description">
-          <p>The goal was to present how the new Deferrable Views feature, introduced in Angular 17, improves not only
-            application performance but also user experience.</p>
-        </div>
-        <div class="event-links">
-          <ul>
-            <li><a  target="_blank" href="https://www.meetup.com/paris-angular/events/305655014/?eventOrigin=group_events_list">Event
-                Page</a></li>
-          </ul>
-        </div>
-      </div>
-
-
-      <div class="event-item">
-        <div class="event-date-and-title">
-          <span class="event-date">14 Dec 2024 </span> <span class="event-type">[Talk] <span title="language: french">
-              🇫🇷</span>
-          </span>: <span class="event-title">[DevFest Yamoussoukro] - Angular - @let - Déclaration de variables dans les
-            templates</span>
-        </div>
-        <div class="event-description">
-          <p>The goal of this talk was to demonstrate, through various use cases, how the new variable declaration
-            feature in templates, introduced in Angular 18, enhances the developer experience.</p>
-        </div>
-        <div class="event-links">
-          <ul>
-            <li><a
-               target="_blank"
-                href="https://gdg.community.dev/events/details/google-gdg-yamoussoukro-presents-devfest-yamoussoukro-2024/">Event
-                Page</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="event-item">
-        <div class="event-date-and-title">
-          <span class="event-date">11 Dec 2024 </span> <span class="event-type">[Talk] <span title="language: french">
-              🇫🇷</span>
-          </span>: <span class="event-title">[Node.js Paris #3] - Node.js Can Do That !! 🤯 (Node.js peut faire ça
-            !!)</span>
-        </div>
-        <div class="event-description">
-          <p>I gave this talk at the Node.js Paris meetup #3, chapitre 12.</p>
-          <p>Node.js has evolved significantly in recent years, with many improvements aimed at optimizing the developer
-            experience. During this talk, I highlighted some of Node.js's native features that, when well understood,
-            can help developers reduce their reliance on third-party NPM modules in their projects.</p>
-        </div>
-        <div class="event-links">
-          <ul>
-            <li><a  target="_blank" href="https://www.meetup.com/nodejs-paris/events/304374467/?eventOrigin=group_events_list">Event
-                Page</a></li>
-            <li><a  target="_blank" href="https://youtu.be/eAKom0M9--o?si=MN04Y_vuuqR86VWF">Video (Youtube)</a></li>
-
-          </ul>
-        </div>
-      </div>
-
-      <div class="event-item">
-        <div class="event-date-and-title">
-          <span class="event-date">10 Dec 2024 </span> <span class="event-type">[Panel] <span title="language: french">
-              🇫🇷</span>
-          </span>: <span class="event-title">[Angular Devs France] - Live table ronde sortie Angular 19</span>
-        </div>
-        <div class="event-description">
-          <p>During this live roundtable organized by Angular Devs France, we discussed the major changes introduced in
-            Angular 19, enterprise experiences in migrating projects to the new signal-based APIs, and many other
-            topics.
+        <div class="footer-right">
+          <p style="color: var(--secondary-text); font-size: 0.9rem;">
+            © 2025 Modeste ASSIONGBON
           </p>
         </div>
-        <div class="event-links">
-          <ul>
-            <li><a  target="_blank" href="https://www.youtube.com/live/5z2FC0bc0ug?si=90zfGvsZQxkrDkzh">Video (Youtube)</a></li>
-          </ul>
-        </div>
       </div>
+    </footer>
 
-
-      <div class="event-item">
-        <div class="event-date-and-title">
-          <span class="event-date">08 Nov 2024 </span> <span class="event-type">[Panel] <span title="language: french">
-              🇫🇷</span>
-          </span>: <span class="event-title">[Possacode Day] - Comment bien construire sa carrière de développeur
-            frontend.</span>
-        </div>
-        <div class="event-description">
-          <p>During Possacode Day, I had the opportunity to participate in a panel organized by Possacode. The goal was
-            to allow senior developers and experts from different technologies to share their experiences on building a
-            successful frontend developer career.</p>
-        </div>
-      </div>
-
-      <div class="event-list">
-        <div class="event-item">
-          <div class="event-date-and-title">
-            <span class="event-date">02 Jul 2024</span> <span class="event-type">[LIVE CODING] <span
-                title="language: french"> 🇫🇷</span>
-            </span>: <span class="event-title"> [Meetup GDG Paris] - La Programmation Réactive & RxJS n'auront plus de
-              secrets pour vous
-              !!</span>
-          </div>
-          <div class="event-description">
-            <p>I gave this talk at a meetup organized by GDG (Google
-              Developers Groups) Paris.</p>
-
-            <p>The goal of the talk was to demystify RxJS from scratch, sharing with the audience the essentials needed
-              to become independent with RxJS, the utility of high-order observables, subjects, the concepts of cold and
-              hot observables, among other things.</p>
-          </div>
-          <div class="event-links">
-            <ul>
-              <li><a target="_blank"
-                  href="https://gdg.community.dev/events/details/google-gdg-paris-presents-la-programmation-reactive-amp-rxjs-nauront-plus-de-secrets-pour-vous/">Event
-                  Page</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="event-item">
-          <div class="event-date-and-title">
-            <span class="event-date">20 Jun 2024</span> <span class="event-type">[TALK] <span title="language: french">
-                🇫🇷</span>
-            </span>: <span class="event-title">[Google I/O Extended Connect 2024 Paris] - Renaissance d'Angular
-              - Quoi de neuf ?</span>
-          </div>
-          <div class="event-description">
-            <p>I gave this talk at the Google I/O Extended Connect 2024 Paris, a meetup organized by GDG (Google
-              Developers Groups) Paris to share the key points of the Google I/O 2024. The goal of this talk was to
-              summarize the key points from the Angular team's presentation at the last Google I/O.</p>
-
-            <p>The talk was structured into three main parts: new features, community news, and finally, the Angular
-              team’s collaborations and their roadmap for upcoming versions of Angular.</p>
-          </div>
-          <div class="event-links">
-            <ul>
-              <li><a target="_blank"
-                  href="https://gdg.community.dev/events/details/google-gdg-paris-presents-google-io-extended-connect-2024-paris/">Event
-                  Page</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="event-item">
-          <div class="event-date-and-title">
-            <span class="event-date">25 May 2024</span> <span class="event-type">[TALK] <span title="language: french">
-                🇫🇷</span>
-            </span>: <span class="event-title">[Google I/O Extended Connect Afrique Francophone] - Renaissance d'Angular
-              - Quoi de neuf ?</span>
-          </div>
-          <div class="event-description">
-
-
-            <p>I gave this talk at the Google I/O Extended Connect Afrique Francophone, an online conference which
-              gathered several GDGs (Google Developers Groups) of Francophone Africa to share the key points of the
-              Google I/O 2024. The goal of this talk was to summarize the key points from the Angular team's
-              presentation at the last
-              Google I/O.</p>
-
-            <p>The talk was structured into three main parts: new features, community news, and finally, the
-              Angular team’s collaborations and their roadmap for upcoming versions of Angular.</p>
-
-          </div>
-          <div class="event-links">
-            <ul>
-              <li><a
-                   target="_blank" href="https://gdg.community.dev/events/details/google-gdg-cloud-abidjan-presents-google-io-extended-connect-afrique-francophone/">Event
-                  Page</a></li>
-              <li><a  target="_blank" href="https://www.youtube.com/live/I7YBF3ymbdQ?si=u8OhsWsr1qpjD-Oi&t=976">Video (Youtube)</a></li>
-
-
-            </ul>
-          </div>
-        </div>
-        <div class="event-item">
-          <div class="event-date-and-title">
-            <span class="event-date">07 May 2024 - 30 May 2024</span> <span class="event-type">[Training] <span
-                title="language: french"> 🇫🇷</span>
-            </span>: <span class="event-title">[Workshop GDG Cloud Abidjan & GDG Bassam] - Formation d'initaition à
-              Angular V16+</span>
-          </div>
-          <div class="event-description">
-
-
-            <p>Angular training lasting a total of more than 14 hours, co-organized with GDG Cloud Abidjan & GDG Bassam.
-              The training is spread
-              over several days (Tuesday, Thursday) for four weeks (a total of 8 sessions).</p>
-
-            <p>The goal is to provide you with essential basic knowledge, the fundamentals to start with Angular or
-              deepen your understanding of the framework.</p>
-
-          </div>
-          <div class="event-links">
-            <ul>
-              <li><a target="_blank"
-                  href="https://gdg.community.dev/events/details/google-gdg-cloud-abidjan-presents-session-18-introduction-rapide-a-typescript-2024-05-07/">Event
-                  Page</a></li>
-              <li><a target="_blank"
-                  href="https://youtube.com/playlist?list=PLm4nL84YHygSDB_F64y4nofn3NO_91ZPt&si=mSM3v34G3Lpv7iF6">Videos
-                  (Youtube)</a></li>
-
-            </ul>
-          </div>
-        </div>
-        <div class="event-item">
-          <div class="event-date-and-title">
-            <span class="event-date">18 Apr 2O24</span> <span class="event-type">[Talk] <span title="language: french">
-                🇫🇷</span> </span>: <span class="event-title"> [DevoxxFR] - Angular
-              Deferrable Views : Améliorer la performance et l'UX</span>
-          </div>
-          <div class="event-description">
-            <p>I gave this talk at the DevoxxFR 2024 Conference in Paris. The goal of this talk was to present how the
-              new Deferrable Views feature
-              introduced in Angular version 17 helps improve not only an application performance but also the user
-              experience.
-            </p>
-          </div>
-          <div class="event-links">
-            <ul>
-              <li><a target="_blank" href="https://www.youtube.com/watch?v=Y85kc7bGszI">Video (Youtube)</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="event-item">
-          <div class="event-date-and-title">
-            <span class="event-date">23 Nov 2O23</span> <span class="event-type">[Workshop] <span
-                title="language: french"> 🇫🇷</span> </span>: <span class="event-title">[Workshop GDG Paris] - Atelier
-              Découverte des Signaux Angular V16+</span>
-          </div>
-          <div class="event-description">
-            <p>The goal of this workshop, co-organized with GDG Paris, was to introduce the audience to the new Signal
-              API introduced in Angular version 16. It provides a straightforward API for developing reactive
-              applications.</p>
-          </div>
-          <div class="event-links">
-            <ul>
-              <li><a target="_blank"
-                  href="https://gdg.community.dev/events/details/google-gdg-paris-presents-atelier-decouverte-des-signaux-angular/">Event
-                  Page</a></li>
-              <li><a target="_blank" href="https://youtu.be/VG8h_uIeTbU">Video (Youtube)</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="event-item">
-          <div class="event-date-and-title">
-            <span class="event-date">24 Oct 2023 - 04 Nov 2023</span> <span class="event-type">[Training] <span
-                title="language: french"> 🇫🇷</span>
-            </span>: <span class="event-title">[Workshop GDG Lomé] - Formation d'initaition à Angular V16+</span>
-          </div>
-          <div class="event-description">
-
-
-            <p>Angular training lasting a total of more than 8 hours, co-organized with GDG Lomé. The training is spread
-              over several days (Tuesday, Thursday, Saturday) for two weeks (a total of 6 sessions).</p>
-
-            <p>The goal is to provide you with essential basic knowledge, the fundamentals to start with Angular or
-              deepen your understanding of the framework.</p>
-
-          </div>
-          <div class="event-links">
-            <ul>
-              <li><a target="_blank"
-                  href="https://gdg.community.dev/events/details/google-gdg-lome-presents-creez-des-applications-web-interactives-angular-jour-1/">Event
-                  Page</a></li>
-              <li><a target="_blank"
-                  href="https://youtube.com/playlist?list=PLnBtvYS1AbOyA1u8ZogWqiIGoL0H98bHU&si=bMrKR38IT7yceJ80">Videos
-                  (Youtube)</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="event-item">
-          <div class="event-date-and-title">
-            <span class="event-date">30 Sep 2O23</span> <span class="event-type">[talk] <span title="language: french">
-                🇫🇷</span> </span>: <span class="event-title">[MKUTANO IT 2023] - JavaScript
-              is everywhere... let's bet on it</span>
-          </div>
-          <div class="event-description">
-            <p>At the MKUTANO 2023 conference, I had the opportunity to explain to the audience why JavaScript is the
-              language to invest in for the future.</p>
-          </div>
-          <div class="event-links">
-            <ul>
-              <li><a target="_blank" href="https://youtu.be/h1_nk7Gqxf0?si=LT1-caSNiBCmDko0">Video (Youtube)</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="event-item">
-          <div class="event-date-and-title">
-            <span class="event-date">27 Jan 2O23</span> <span class="event-type">[Live Coding] <span
-                title="language: french"> 🇫🇷</span> </span>: <span class="event-title"> [Meetup ESGI] -
-              Implémentation
-              d'une API REST en utilisant Express.js et
-              Typescript</span>
-          </div>
-          <div class="event-description">
-            <p>During an online meetup organized by ESGI students on TypeScript, I had the opportunity to share,
-              through live coding, how to set up a REST API from scratch using TypeScript and Express.js.
-            </p>
-          </div>
-        </div>
-      </div>
-
-
-      <h3>NPM Libraries</h3>
-      <ul class="thin small">
-        <li>
-          <a target="_blank" href="https://www.npmjs.com/package/@rblmdst/i18n-lib">i18n-lib</a>
-          : An internationalization library for Node.Js.
-        </li>
-        <li>
-          <a target="_blank" href="https://www.npmjs.com/package/@rblmdst/scheval">Scheval</a>
-          : A Javascript object / schema validator with simple and
-          comprehensible API.
-        </li>
-      </ul>
-    </section>
-    <section id="contacts">
-      <h2>Contacts</h2>
-      <div><i class="fa fa-map-marker"></i> France, Île-de-France</div>
-
-      <div>
-        <a class="thin" target="_blank" href="https://www.linkedin.com/in/%F0%9F%92%A3-modeste-assiongbon-41b90113a/">
-          <i class="fa fa-linkedin-square"></i> Modeste ASSIONGBON</a>
-      </div>
-      <div>
-        <a class="thin" target="_blank" href="https://twitter.com/rblmdst">
-          <i class="fa fa-twitter"></i> @rblmdst</a>
-      </div>
-    </section>
   </div>
 </body>
 
